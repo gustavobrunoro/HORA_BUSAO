@@ -59,11 +59,16 @@ dependencies {
     //Implementacao Cardview Expansivel
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 
-
     //Implementacao SmartTabLayout
     implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
 
+    //Implementação da biblioteca de Data
     implementation 'joda-time:joda-time:2.10.8'
+
+    //Implementação da Pagina de Contatos e Sobre
+    implementation 'com.github.medyo:android-about-page:1.2.4'
+
+    implementation 'com.github.mreram:showcaseview:1.2.0'
 
 }

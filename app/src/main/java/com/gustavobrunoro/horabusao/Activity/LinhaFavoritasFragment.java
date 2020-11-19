@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.gustavobrunoro.horabusao.Adapter.AdapterLinhaFavorita;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
@@ -26,6 +27,7 @@ public class LinhaFavoritasFragment extends Fragment {
 
     private View view;
     private Toolbar toolbar;
+    private TextView aviso;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private ConfiguracaoDatabase configuracaoDatabase;
@@ -59,6 +61,7 @@ public class LinhaFavoritasFragment extends Fragment {
 
     public void inicializaComponentes () {
         toolbar      = view.findViewById(R.id.toolbar);
+        aviso        = view.findViewById(R.id.tv_AvisoLinhaFavoritas);
         recyclerView = view.findViewById(R.id.rv_favoritas);
 
         configuracaoDatabase = ConfiguracaoDatabase.getInstance( getContext() );
@@ -81,12 +84,20 @@ public class LinhaFavoritasFragment extends Fragment {
     }
 
     public void atualizaRecycleView( final List<LinhaFavorita> linhaFavoritas){
+
             adapter = new AdapterLinhaFavorita(linhaFavoritas);
             layoutManager = new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+
+            if (linhaFavoritas.size() > 0 ) {
+                aviso.setVisibility(View.GONE);
+            }
+            else{
+                aviso.setVisibility(View.VISIBLE);
+            }
     }
 
 }

@@ -1,16 +1,25 @@
 <resources>
+
     <string name="app_name">Hora Busao</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Nome do Usuario</string>
+    <string name="nav_header_subtitle"></string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="periodo1">Dias Úteis</string>
-    <string name="periodo2">Sáb/Dom e Feriado</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="periodo_1">Dias Úteis</string>
+    <string name="periodo_2">Sáb/Dom e Feriado</string>
     <string name="estacao"> Estação %s</string>
+
+    <string name="title_tutorial_1">Próximo</string>
+    <string name="title_tutorial_2">Grade Completa</string>
+    <string name="title_tutorial_3">Favoritos</string>
+    <string name="title_tutorial_4">Itinerários</string>
+
+    <string name="message_tutorial_1">Próx. horário do Ônibus \n e o tempo restante.</string>
+    <string name="message_tutorial_2">Grade completa com \n todos os horários </string>
+    <string name="message_tutorial_3">Marcar  linha \n como favorita</string>
+    <string name="message_tutorial_4">Efetuar troca do itinerário</string>
 
 </resources>

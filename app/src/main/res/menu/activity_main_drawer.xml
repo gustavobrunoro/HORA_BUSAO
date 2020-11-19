@@ -10,7 +10,21 @@
             android:title="Inicio" />
         <item
             android:id="@+id/nav_PontosRecargaID"
-            android:icon="@drawable/ic_baseline_star_24"
+            android:icon="@drawable/ic_baseline_location_on_24"
             android:title="Pontos de Recarrega" />
     </group>
+
+    <item android:title="Comunicação">
+        <menu>
+            <item
+                android:id="@+id/nav_Sobre"
+                android:icon="@drawable/ic_nav_sobre_24dp"
+                android:title="Sobre"/>
+            <item
+                android:id="@+id/nav_Sair"
+                android:icon="@drawable/ic_nav_sair_24dp"
+                android:title="Sair"/>
+        </menu>
+    </item>
+
 </menu>

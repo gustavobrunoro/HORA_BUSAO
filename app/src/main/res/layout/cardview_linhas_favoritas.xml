@@ -42,6 +42,7 @@
                     android:drawablePadding="5dp"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dip"
+                    android:paddingRight="5dp"
                     android:paddingTop="8dp"
                     android:text="Descricao Linha" />
 
@@ -53,6 +54,7 @@
                     android:drawablePadding="5dp"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dip"
+                    android:paddingRight="5dp"
                     android:text="Descricao Itinerio"
                     android:paddingTop="10dp"/>
 
@@ -64,6 +66,7 @@
                     android:drawablePadding="5dp"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dip"
+                    android:paddingRight="5dp"
                     android:text="Descricao Estação"
                     android:paddingTop="10dp"/>
 

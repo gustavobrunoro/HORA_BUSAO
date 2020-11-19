@@ -66,7 +66,8 @@ public class HorariosActivity extends AppCompatActivity {
             }
         });
 
-        title.setText( getString(R.string.estacao, String.valueOf( numero ) ) );
+        //title.setText( getString(R.string.estacao, String.valueOf( numero ) ) );
+        title.setText( descricaoLinha );
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

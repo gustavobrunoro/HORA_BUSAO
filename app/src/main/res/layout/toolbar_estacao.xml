@@ -9,9 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:titleTextColor="@android:color/white"
-        app:theme="@style/ToolbarColoredBackArrow">
+        android:background="?attr/colorPrimary">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -35,12 +33,11 @@
                 android:layout_height="0dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:text=" asdasdasdasdasd"
+                android:text=" Estação"
                 android:gravity="center"
                 android:textAlignment="textStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/logo"

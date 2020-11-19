@@ -41,12 +41,12 @@ public class AdapterHorarios  extends CardSliderAdapter<AdapterHorarios.MyviewHo
     public void bindVH (MyviewHolder myviewHolder, int i) {
 
         if ( i == 0 ){
-            myviewHolder.PeriodoID.setText( R.string.periodo1 );
+            myviewHolder.PeriodoID.setText( R.string.periodo_1);
             CustomGridViewActivity adapterViewAndroid = new CustomGridViewActivity(context, linha, periodo(0) );
             myviewHolder.androidGridView.setAdapter(adapterViewAndroid);
         }
         else{
-            myviewHolder.PeriodoID.setText( R.string.periodo2 );
+            myviewHolder.PeriodoID.setText( R.string.periodo_2);
             CustomGridViewActivity adapterViewAndroid = new CustomGridViewActivity(context, linha, periodo(1) );
             myviewHolder.androidGridView.setAdapter(adapterViewAndroid);
         }

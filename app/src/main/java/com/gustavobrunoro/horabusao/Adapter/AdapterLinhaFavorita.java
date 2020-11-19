@@ -73,9 +73,11 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
             public void onCheckedChanged (CompoundButton compoundButton, boolean b) {
                 if (b){
                     holder.Horario.setTextOn( proximoHorario( linhaFavoritas.get(position).getEstacao().getEstacaoID(), linhaFavoritas.get(position).getItinerarioIDFK() ));
+                    holder.Horario.setTextColor(context.getResources().getColor(android.R.color.black));
                 }
                 else{
                     holder.Horario.setTextOff( tempoRestante( linhaFavoritas.get(position).getEstacao().getEstacaoID(), linhaFavoritas.get(position).getItinerarioIDFK() ));
+                    holder.Horario.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
                 }
             }
         });

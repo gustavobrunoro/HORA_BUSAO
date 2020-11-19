@@ -33,7 +33,7 @@
             android:drawableLeft="@drawable/ic_ponto_onibus"
             android:gravity="center"
             android:padding="10dp"
-            android:text=" Próx.:10:30"
+            android:textOff=" Próx.:10:30"
             android:textSize="12sp"
             android:background="@android:color/transparent"
             android:checked="true"/>

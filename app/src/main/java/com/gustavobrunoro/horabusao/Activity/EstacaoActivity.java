@@ -16,6 +16,10 @@ import com.gustavobrunoro.horabusao.Adapter.AdapterEstacao;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.R;
 
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+
+import static com.gustavobrunoro.horabusao.R.drawable.ic_baseline_autorenew_24;
+
 public class EstacaoActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -26,6 +30,8 @@ public class EstacaoActivity extends AppCompatActivity {
 
     private Linha linha = new Linha();
     private int itinerario = 0;
+
+    private View view;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -44,7 +50,8 @@ public class EstacaoActivity extends AppCompatActivity {
                 finish();
             }
         });
-        title.setText( getString(R.string.estacao, String.valueOf( linha.getNumero() ) ) );
+        //title.setText( getString(R.string.estacao, String.valueOf( linha.getNumero() ) ) );
+        title.setText( linha.getDescricao() );
 
         trajeto.setChecked(true);
         trajeto.setText( linha.getItinerarios().get(0).getDescricao() );
@@ -72,10 +79,12 @@ public class EstacaoActivity extends AppCompatActivity {
         title        = (TextView) toolbar.findViewById(R.id.title);
         trajeto      = findViewById(R.id.tg_TrajetoID);
         recyclerView = findViewById(R.id.recycler_view);
+
+        view         = findViewById(R.id.tg_TrajetoID);
     }
 
     public void carregaRecycle(){
-        adapter = new AdapterEstacao(recyclerView, linha, itinerario);
+        adapter = new AdapterEstacao(recyclerView, linha, itinerario, view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);

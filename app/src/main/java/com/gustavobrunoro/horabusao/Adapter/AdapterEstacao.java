@@ -1,7 +1,9 @@
 package com.gustavobrunoro.horabusao.Adapter;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +20,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gustavobrunoro.horabusao.Activity.HorariosActivity;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
+import com.gustavobrunoro.horabusao.Database.SharedPreferences;
 import com.gustavobrunoro.horabusao.Helper.CustomGridViewActivity;
 import com.gustavobrunoro.horabusao.Model.Estacao;
 import com.gustavobrunoro.horabusao.Model.Horarios;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
+import com.gustavobrunoro.horabusao.Model.Preferencias;
 import com.gustavobrunoro.horabusao.R;
 import com.like.LikeButton;
 import com.like.OnLikeListener;
@@ -42,6 +46,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
+
 public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHolder> {
 
     private Context context;
@@ -54,10 +63,19 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
     private Linha linha = new Linha();
     private int itinerario;
 
-    public AdapterEstacao (RecyclerView recyclerView, Linha linha, int itinerario ) {
+    private GuideView mGuideView;
+    private GuideView.Builder builder;
+
+    private  View view1;
+    private  View view2;
+    private  View view3;
+    private  View view4;
+
+    public AdapterEstacao (RecyclerView recyclerView, Linha linha, int itinerario, View view ) {
         this.recyclerView = recyclerView;
         this.linha = linha;
         this.itinerario = itinerario;
+        this.view4 = view;
     }
 
     @NonNull
@@ -130,13 +148,16 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 @Override
                 public void onCheckedChanged (CompoundButton compoundButton, boolean b) {
                     if (b){
-                       proximoHorario.setTextOn(proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ));
+                       proximoHorario.setTextOn( "Prox. \n" + proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ));
+                       proximoHorario.setTextColor(context.getResources().getColor(android.R.color.black));
                     }
                     else{
-                       proximoHorario.setTextOff(tempoRestante( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ));
+                       proximoHorario.setTextOff("Prox. \n" + tempoRestante( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ));
+                       proximoHorario.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
                     }
                 }
             });
+
         }
 
         public void bind() {
@@ -144,7 +165,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             int position = getAdapterPosition();
             boolean isSelected = position == selectedItem;
 
-            proximoHorario.setText( proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() ) );
+            proximoHorario.setText( "Prox. \n" + proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() ) );
             descricao.setText( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getDescricao() );
             descricao.setSelected(isSelected);
             expandableLayout.setExpanded(isSelected, false);
@@ -158,6 +179,12 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             if ( position == 0 ){
                 expandableLayout.expand(false);
                 selectedItem = 0;
+
+                view1 = itemView.findViewById(R.id.tv_ProximoHorarioID);
+                view2 = itemView.findViewById(R.id.tv_GradeID);
+                view3 = itemView.findViewById(R.id.mfb_LinhaFavoritaID);
+
+                loadTutorial();
             }
         }
 
@@ -175,6 +202,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
 
             if (position == selectedItem) {
                 selectedItem = UNSELECTED;
+
             }
             else {
                 descricao.setSelected(true);
@@ -186,7 +214,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         @Override
         public void onExpansionUpdate(float expansionFraction, int state) {
            if (state == ExpandableLayout.State.EXPANDING) {
-
               if ( getAdapterPosition() != -1 )
                 recyclerView.smoothScrollToPosition(getAdapterPosition());
             }
@@ -332,9 +359,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         linhaFavorita.setDescricaoIntinerario( linha.getItinerarios().get(itinerario).getDescricao() );
 
         linhaFavorita.setEstacaoIDFK( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getEstacaoID() );
-        //linhaFavorita.setDescricaoEstacao( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getDescricao() );
-
-        //linhaFavorita.setHorariosList( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getHorariosList() );
 
         Estacao e = new Estacao();
 
@@ -351,7 +375,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             }
         });
 
-        AdapterEstacao.this.notifyDataSetChanged();
     }
 
     public void removeLinhaFavorita(Linha linha, int itinerario, int estacao,final LikeButton likeButton){
@@ -412,6 +435,69 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             resp.append('0');
         }
         return  resp + s;
+    }
+
+    public void loadTutorial(){
+
+       final SharedPreferences sharedPreferences;
+       Preferencias preferencias = new Preferencias();
+
+       sharedPreferences = new SharedPreferences(context);
+       preferencias = sharedPreferences.recupraPreferencias();
+
+       if ( preferencias == null || !preferencias.isPrimeiroAcesso() ) {
+
+            builder = new GuideView.Builder(context)
+                                   .setTitle( context.getResources().getString( R.string.title_tutorial_1 ) )
+                                   .setContentText( context.getResources().getString( R.string.message_tutorial_1 ) )
+                                   .setGravity( Gravity.center )
+                                   .setDismissType( DismissType.anywhere )
+                                   .setTargetView( view1 )
+                                   .setGuideListener( new GuideListener() {
+                                        @Override
+                                        public void onDismiss (View view) {
+                                            switch (view.getId()) {
+                                                case R.id.tv_ProximoHorarioID:
+                                                     builder.setTitle( context.getResources().getString( R.string.title_tutorial_2 ) );
+                                                     builder.setContentText( context.getResources().getString( R.string.message_tutorial_2 ) );
+                                                     builder.setTargetView(view2).build();
+                                                     break;
+                                                case R.id.tv_GradeID:
+                                                    builder.setTitle( context.getResources().getString( R.string.title_tutorial_3 ) );
+                                                    builder.setContentText( context.getResources().getString( R.string.message_tutorial_3 ) );
+                                                    builder.setTargetView(view3).build();
+                                                    break;
+                                                case R.id.mfb_LinhaFavoritaID:
+                                                    builder.setTitle( context.getResources().getString( R.string.title_tutorial_4 ) );
+                                                    builder.setContentText( context.getResources().getString( R.string.message_tutorial_4 ) );
+                                                    builder.setTargetView(view4).build();
+                                                    break;
+                                                case R.id.tg_TrajetoID:
+                                                    Preferencias pref = new Preferencias();
+                                                    pref.setPrimeiroAcesso(true);
+                                                    sharedPreferences.atualizaPreferencias(pref);
+                                                    return;
+                                            }
+                                            mGuideView = builder.build();
+                                            mGuideView.show();
+                                        }
+                                    });
+
+            mGuideView = builder.build();
+            mGuideView.show();
+
+            updatingForDynamicLocationViews();
+        }
+
+    }
+
+    private void updatingForDynamicLocationViews() {
+        view1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                mGuideView.updateGuideViewLocation();
+            }
+        });
     }
 
 }

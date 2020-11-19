@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.gustavobrunoro.horabusao.Activity.LinhaFavoritasFragment;
 import com.gustavobrunoro.horabusao.Activity.LinhaFragment;
+import com.gustavobrunoro.horabusao.Activity.SobreActivity;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
 import com.gustavobrunoro.horabusao.Helper.CommonUtils;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         toggle = new ActionBarDrawerToggle( this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+        drawer.addDrawerListener( toggle );
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -114,7 +115,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 break;
             case R.id.nav_PontosRecargaID:
-
+                break;
+            case R.id.nav_Sobre:
+                startActivity(new Intent(getApplicationContext(), SobreActivity.class));
                 break;
         }
 
