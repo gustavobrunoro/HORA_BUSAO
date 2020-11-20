@@ -59,15 +59,14 @@ public class CustomGridViewActivity extends BaseAdapter {
         Holder holder = new Holder();
         View rowView;
 
-        rowView = layoutInflater.inflate(R.layout.gridview_horarios, null);
-        holder.tv =( TextView) rowView.findViewById(R.id.android_gridview_text);
+        rowView   = layoutInflater.inflate(R.layout.gridview_horarios, null);
+        holder.tv = rowView.findViewById(R.id.android_gridview_text);
 
         holder.tv.setText( horarios.get(i).getHora() );
 
         if (i == 0) {
             if (verificaHorario(horarios.get( i ).getHora(), horarios.get( i ).getHora())) {
-                holder.tv.setTextColor( ResourcesCompat.getColor( mContext.getResources(), android.R.color.white, null));
-                //holder.tv.setBackgroundColor(  ResourcesCompat.getColor( mContext.getResources(), R.color.colorPrimaryDark, null));
+                holder.tv.setTextColor( ResourcesCompat.getColor( mContext.getResources(), android.R.color.white, null) );
                 holder.tv.setBackgroundResource( R.drawable.cantos_arredondados_proximo );
             }
             else{
@@ -76,8 +75,7 @@ public class CustomGridViewActivity extends BaseAdapter {
         }
         else {
             if (verificaHorario(horarios.get( i - 1 ).getHora(), horarios.get( i ).getHora())) {
-                holder.tv.setTextColor( ResourcesCompat.getColor( mContext.getResources(), android.R.color.white, null));
-                //holder.tv.setBackgroundColor(  ResourcesCompat.getColor( mContext.getResources(), R.color.colorPrimaryDark, null));
+                holder.tv.setTextColor( ResourcesCompat.getColor( mContext.getResources(), android.R.color.white, null) );
                 holder.tv.setBackgroundResource( R.drawable.cantos_arredondados_proximo );
             }
             else{
@@ -93,7 +91,6 @@ public class CustomGridViewActivity extends BaseAdapter {
         });
 
         return rowView;
-
     }
 
     public class Holder{
@@ -111,26 +108,24 @@ public class CustomGridViewActivity extends BaseAdapter {
 
             Agora = convertDate(sdfFormat.format(Agora));
 
-            GregorianCalendar gcAgora = new GregorianCalendar();
-            GregorianCalendar gcAntes = new GregorianCalendar();
+            GregorianCalendar gcAgora  = new GregorianCalendar();
+            GregorianCalendar gcAntes  = new GregorianCalendar();
             GregorianCalendar gcDepois = new GregorianCalendar();
 
             gcAgora.setTime(Agora);
             gcAntes.setTime(convertDate(hora1));
             gcDepois.setTime(convertDate(hora2));
 
-            long tempAgora = gcAgora.getTimeInMillis();
-            long tempAntes = gcAntes.getTimeInMillis();
+            long tempAgora  = gcAgora.getTimeInMillis();
+            long tempAntes  = gcAntes.getTimeInMillis();
             long tempDepois = gcDepois.getTimeInMillis();
 
             if ((tempAgora >= tempAntes) && (tempAgora < tempDepois)) {
                 controle = true;
             }
-
         }
 
         return controle;
-
     }
 
     public Date convertDate (String date) {
@@ -165,7 +160,6 @@ public class CustomGridViewActivity extends BaseAdapter {
 
         //Configurações do evento.
         intent.putExtra(CalendarContract.Events.TITLE, "Linha: " + linha);
-        //intent.putExtra(CalendarContract.Events.DESCRIPTION, "Teste de descrição");
 
         //Configuração de data do evento
         GregorianCalendar calDateInicio = new GregorianCalendar();
@@ -185,7 +179,6 @@ public class CustomGridViewActivity extends BaseAdapter {
         intent.putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
 
         mContext.startActivity(intent);
-
     }
 
 }

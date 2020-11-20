@@ -6,7 +6,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-
 import com.gustavobrunoro.horabusao.Model.Linha;
 
 import java.util.List;
@@ -31,5 +30,4 @@ public interface LinhaDAO {
 
     @Update
     void updateLinha (Linha linha);
-
 }

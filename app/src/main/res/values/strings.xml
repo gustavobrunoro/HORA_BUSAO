@@ -12,14 +12,24 @@
     <string name="periodo_2">Sáb/Dom e Feriado</string>
     <string name="estacao"> Estação %s</string>
 
+    <string name="proximo"> Prox. \n %s</string>
+
     <string name="title_tutorial_1">Próximo</string>
     <string name="title_tutorial_2">Grade Completa</string>
     <string name="title_tutorial_3">Favoritos</string>
     <string name="title_tutorial_4">Itinerários</string>
 
-    <string name="message_tutorial_1">Próx. horário do Ônibus \n e o tempo restante.</string>
-    <string name="message_tutorial_2">Grade completa com \n todos os horários </string>
-    <string name="message_tutorial_3">Marcar  linha \n como favorita</string>
+    <string name="message_tutorial_1">Próx. horário do Ônibus\ne o tempo restante.</string>
+    <string name="message_tutorial_2">Grade completa com\ntodos os horários </string>
+    <string name="message_tutorial_3">Marcar  linha\ncomo favorita</string>
     <string name="message_tutorial_4">Efetuar troca do itinerário</string>
+
+    <string name="sobre_descricao">Aplicativo desenvolvido para auxiliar na buscar de horários de ônibus de Eunápolis, trazendo comodidade e agilidade para o usuário do sistema de transporte público.</string>
+    <string name="sobre_telefone">(73) 3262-0491</string>
+    <string name="sobre_email">(73) 3262-0491</string>
+    <string name="sobre_website">http://www.gwgviacaoeturismo.com.br/index.html</string>
+    <string name="sobre_facebook">viacaogwgtranporteseturismo</string>
+    <string name="sobre_instagram">empresadetransportegwg</string>
+    <string name="sobre_version"> Versão %s</string>
 
 </resources>

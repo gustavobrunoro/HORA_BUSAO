@@ -50,7 +50,6 @@ public class EstacaoActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //title.setText( getString(R.string.estacao, String.valueOf( linha.getNumero() ) ) );
         title.setText( linha.getDescricao() );
 
         trajeto.setChecked(true);
@@ -76,7 +75,7 @@ public class EstacaoActivity extends AppCompatActivity {
 
     public void inicializaComponentes () {
         toolbar      = findViewById(R.id.toolbar);
-        title        = (TextView) toolbar.findViewById(R.id.title);
+        title        = toolbar.findViewById(R.id.title);
         trajeto      = findViewById(R.id.tg_TrajetoID);
         recyclerView = findViewById(R.id.recycler_view);
 

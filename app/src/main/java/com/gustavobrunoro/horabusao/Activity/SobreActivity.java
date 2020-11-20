@@ -7,7 +7,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.gustavobrunoro.horabusao.R;
@@ -20,9 +19,8 @@ public class SobreActivity extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_sobre);
 
-        String descricao = "Aplicativo desenvolvido para auxiliar na buscar de horários de ônibus de Eunápolis, trazendo comodidade e agilidade para o usuário do sistema de transporte público.";
+        String descricao = getResources().getString(R.string.sobre_descricao) ;
 
         PackageInfo pInfo = null;
         try {
@@ -32,32 +30,31 @@ public class SobreActivity extends AppCompatActivity {
         }
 
         Element versionElement = new Element();
-        versionElement.setTitle("Versão " + pInfo.versionName);
+        versionElement.setTitle( getResources().getString( R.string.sobre_version, pInfo.versionName ) );
 
         Element phoneElement = new Element();
-        phoneElement.setTitle("(73) 3262-0491");
+        phoneElement.setTitle( getResources().getString(R.string.sobre_telefone) );
         phoneElement.setIconDrawable(  R.drawable.ic_baseline_call_24  );
         phoneElement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                String phone = "(73) 3262-0491";
+                String phone = getResources().getString(R.string.sobre_telefone);
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                 startActivity(intent);
             }
         });
 
         View sobre = new AboutPage(this).isRTL(false)
-                .setImage(R.drawable.img_logo)
-                .setDescription(descricao)
-                .addGroup("Fale Conosco")
-                .addEmail("email","Envie um Email")
-                .addWebsite("http://www.gwgviacaoeturismo.com.br/index.html")
-                .addFacebook("viacaogwgtranporteseturismo")
-                .addInstagram("empresadetransportegwg")
-                .addItem(phoneElement)
-                .addItem(versionElement)
+                .setImage( R.drawable.img_logo )
+                .setDescription( descricao )
+                .addGroup( "Fale Conosco" )
+                .addEmail( getResources().getString(R.string.sobre_email) )
+                .addWebsite( getResources().getString(R.string.sobre_website) )
+                .addFacebook( getResources().getString(R.string.sobre_facebook)  )
+                .addInstagram( getResources().getString(R.string.sobre_instagram)  )
+                .addItem( phoneElement )
+                .addItem( versionElement )
                 .create();
         setContentView(sobre);
-
     }
 }

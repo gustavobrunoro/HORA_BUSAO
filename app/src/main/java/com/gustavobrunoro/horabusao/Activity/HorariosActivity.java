@@ -41,8 +41,8 @@ public class HorariosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_horarios);
 
         linha      = (Linha) getIntent().getSerializableExtra("Linha");
-        itinerario = (Integer)   getIntent().getSerializableExtra("Intinenario");
-        estacao    = (Integer)   getIntent().getSerializableExtra("Estacao");
+        itinerario = (Integer) getIntent().getSerializableExtra("Intinenario");
+        estacao    = (Integer) getIntent().getSerializableExtra("Estacao");
 
         if (linha != null ){
             numero         = linha.getNumero();
@@ -66,7 +66,6 @@ public class HorariosActivity extends AppCompatActivity {
             }
         });
 
-        //title.setText( getString(R.string.estacao, String.valueOf( numero ) ) );
         title.setText( descricaoLinha );
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -87,8 +86,8 @@ public class HorariosActivity extends AppCompatActivity {
 
     public void inicializaComponentes () {
         toolbar             = findViewById(R.id.toolbar);
-        title               = (TextView) toolbar.findViewById(R.id.title);
-        cardSliderViewPager = (CardSliderViewPager) findViewById(R.id.viewPager);
+        title               = toolbar.findViewById(R.id.title);
+        cardSliderViewPager = findViewById(R.id.viewPager);
     }
 
 }

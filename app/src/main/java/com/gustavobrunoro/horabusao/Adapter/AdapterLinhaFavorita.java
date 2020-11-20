@@ -3,8 +3,6 @@ package com.gustavobrunoro.horabusao.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gustavobrunoro.horabusao.Activity.HorariosActivity;
 import com.gustavobrunoro.horabusao.Helper.CustomGridViewActivity;
 import com.gustavobrunoro.horabusao.Model.Horarios;
-import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
 import com.gustavobrunoro.horabusao.R;
 
@@ -73,11 +70,11 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
             public void onCheckedChanged (CompoundButton compoundButton, boolean b) {
                 if (b){
                     holder.Horario.setTextOn( proximoHorario( linhaFavoritas.get(position).getEstacao().getEstacaoID(), linhaFavoritas.get(position).getItinerarioIDFK() ));
-                    holder.Horario.setTextColor(context.getResources().getColor(android.R.color.black));
+                    holder.Horario.setTextColor( context.getResources().getColor(android.R.color.black) );
                 }
                 else{
                     holder.Horario.setTextOff( tempoRestante( linhaFavoritas.get(position).getEstacao().getEstacaoID(), linhaFavoritas.get(position).getItinerarioIDFK() ));
-                    holder.Horario.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
+                    holder.Horario.setTextColor( context.getResources().getColor(android.R.color.holo_red_dark) );
                 }
             }
         });
@@ -146,7 +143,6 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
         }
 
         return controle;
-
     }
 
     public String proximoHorario( int estacao, int itinerario ){
@@ -155,11 +151,8 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
         List<Horarios> horariosList = new ArrayList<>();
 
         for (int e = 0 ; e  < linhaFavoritas.size() ; e ++) {
-
             if ( linhaFavoritas.get(e).getEstacao().getEstacaoID() == estacao) {
-
                 horariosList = linhaFavoritas.get(e).getEstacao().getHorariosList();
-
                 for (int h = 0; h < horariosList.size(); h++) {
                     if (horariosList.get(h).getPeriodo() == 0) {
                         if (h == 0) {
@@ -177,7 +170,6 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
         }
 
         return hora;
-
     }
 
     public String tempoRestante( int estacao, int itinerario ){
@@ -248,7 +240,6 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
     }
 
     public String leftZero( String texto, int tamanho ){
-
         String s = texto.trim();
         StringBuffer resp = new StringBuffer();
 

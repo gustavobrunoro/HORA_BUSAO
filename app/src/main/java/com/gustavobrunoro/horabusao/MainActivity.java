@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         viewPager.setAdapter( adapter );
         viewPagerTab.setViewPager( viewPager );
-
     }
 
     @Override
@@ -107,7 +106,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public boolean onNavigationItemSelected(MenuItem item) {
-
         int id = item.getItemId();
 
         switch (id){
@@ -121,19 +119,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
-        Menu menu = navigationView.getMenu();
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     public void inicializaComponentes () {
-        toolbar        = findViewById(R.id.toolbar);
-        drawer         = findViewById(R.id.drawer_layout2);
-        navigationView = findViewById(R.id.nav_view);
-        headerView     = navigationView.getHeaderView(0);
-        viewPagerTab   = findViewById(R.id.viewPagerTab);
-        viewPager      = findViewById(R.id.viewPager);
+        toolbar              = findViewById(R.id.toolbar);
+        drawer               = findViewById(R.id.drawer_layout2);
+        navigationView       = findViewById(R.id.nav_view);
+        headerView           = navigationView.getHeaderView(0);
+        viewPagerTab         = findViewById(R.id.viewPagerTab);
+        viewPager            = findViewById(R.id.viewPager);
         configuracaoDatabase = ConfiguracaoDatabase.getInstance(this);
     }
 
@@ -152,14 +148,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void carregaLinhasFavoritas (){
-
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run () {
                 linhaFavoritas = configuracaoDatabase.linhaFavoritaDAO().getLinhaList();
             }
         });
-
     }
 
 }

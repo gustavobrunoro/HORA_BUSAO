@@ -30,7 +30,6 @@ public class LinhaFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private List<Linha> linhas = new ArrayList<>();
     private AdapterLinha adapter;
-    private Bundle bundle = new Bundle();
 
     private ConfiguracaoDatabase configuracaoDatabase;
 
@@ -51,7 +50,7 @@ public class LinhaFragment extends Fragment {
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_linha, container, false);
+        view = inflater.inflate(R.layout.fragment_linha, container, false);
 
         inicializaComponentes ();
         atualizaRecycleView(linhas);
@@ -71,7 +70,7 @@ public class LinhaFragment extends Fragment {
             }
         }));
 
-        return  view;
+        return view;
     }
 
     private void inicializaComponentes (){
@@ -80,7 +79,6 @@ public class LinhaFragment extends Fragment {
     }
 
     public void carregalinhas(){
-
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run () {

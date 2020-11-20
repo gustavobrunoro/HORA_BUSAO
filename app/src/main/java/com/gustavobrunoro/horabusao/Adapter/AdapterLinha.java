@@ -39,7 +39,6 @@ public class AdapterLinha extends RecyclerView.Adapter<AdapterLinha.MyviewHolder
 
     @Override
     public void onBindViewHolder (@NonNull MyviewHolder holder, final int position) {
-
         linha = linhas.get(position);
 
         holder.NumeroID.setText( String.valueOf( linha.getNumero() ) );
@@ -59,7 +58,7 @@ public class AdapterLinha extends RecyclerView.Adapter<AdapterLinha.MyviewHolder
         public MyviewHolder(final View itemView) {
             super(itemView);
 
-            NumeroID = itemView.findViewById(R.id.tv_NumeroID);
+            NumeroID    = itemView.findViewById(R.id.tv_NumeroID);
             DescricaoID = itemView.findViewById(R.id.tv_DescricaoID);
 
         }

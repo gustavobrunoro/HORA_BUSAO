@@ -40,7 +40,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     //Implementacao Rating ( Favorito )
-    implementation 'com.github.ome450901:SimpleRatingBar:1.5.0'
+    //implementation 'com.github.ome450901:SimpleRatingBar:1.5.0'
 
     //Implementacao ROOM
     implementation "androidx.room:room-runtime:2.2.5"
@@ -63,12 +63,16 @@ dependencies {
     implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
 
-    //Implementação da biblioteca de Data
+    //Implementação da biblioteca de Data e Hora
     implementation 'joda-time:joda-time:2.10.8'
 
     //Implementação da Pagina de Contatos e Sobre
     implementation 'com.github.medyo:android-about-page:1.2.4'
 
+    //Implementação da Tutorial
     implementation 'com.github.mreram:showcaseview:1.2.0'
+
+    //Implementação da Pesquisa Toolbar
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
 
 }

@@ -39,7 +39,6 @@ public class AdapterHorarios  extends CardSliderAdapter<AdapterHorarios.MyviewHo
 
     @Override
     public void bindVH (MyviewHolder myviewHolder, int i) {
-
         if ( i == 0 ){
             myviewHolder.PeriodoID.setText( R.string.periodo_1);
             CustomGridViewActivity adapterViewAndroid = new CustomGridViewActivity(context, linha, periodo(0) );
@@ -58,30 +57,25 @@ public class AdapterHorarios  extends CardSliderAdapter<AdapterHorarios.MyviewHo
     }
 
     public class MyviewHolder extends  RecyclerView.ViewHolder{
-
         TextView PeriodoID;
         GridView androidGridView;
 
         public MyviewHolder(final View itemView) {
             super(itemView);
 
-            PeriodoID = itemView.findViewById(R.id.tv_PeriodoID);
-            androidGridView = (GridView)itemView.findViewById(R.id.grid_view);
+            PeriodoID       = itemView.findViewById(R.id.tv_PeriodoID);
+            androidGridView = itemView.findViewById(R.id.grid_view);
         }
     }
 
     public List<Horarios> periodo(int periodo ){
-
-        List<Horarios> ho = new ArrayList<>();
+        List<Horarios> horarios = new ArrayList<>();
 
         for (Horarios h : horariosList){
             if ( h.getPeriodo() == periodo ){
-                 ho.add(h);
+                horarios.add(h);
             }
         }
-
-        return ho;
+        return horarios;
     }
-
-
 }

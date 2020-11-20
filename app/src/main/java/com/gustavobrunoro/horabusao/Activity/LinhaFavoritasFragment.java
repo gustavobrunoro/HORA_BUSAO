@@ -84,7 +84,6 @@ public class LinhaFavoritasFragment extends Fragment {
     }
 
     public void atualizaRecycleView( final List<LinhaFavorita> linhaFavoritas){
-
             adapter = new AdapterLinhaFavorita(linhaFavoritas);
             layoutManager = new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);

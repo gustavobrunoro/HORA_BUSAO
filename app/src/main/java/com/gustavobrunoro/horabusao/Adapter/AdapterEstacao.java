@@ -1,9 +1,7 @@
 package com.gustavobrunoro.horabusao.Adapter;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,6 @@ import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import com.gustavobrunoro.horabusao.Activity.HorariosActivity;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
@@ -122,7 +119,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             linhaFavorita  = itemView.findViewById(R.id.mfb_LinhaFavoritaID);
 
             linhaFavorita.setLiked(false);
-
             descricao.setOnClickListener(this);
 
             grade.setOnClickListener(new View.OnClickListener() {
@@ -148,16 +144,15 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 @Override
                 public void onCheckedChanged (CompoundButton compoundButton, boolean b) {
                     if (b){
-                       proximoHorario.setTextOn( "Prox. \n" + proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ));
+                       proximoHorario.setTextOn( context.getResources().getString( R.string.proximo, proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ) ) );
                        proximoHorario.setTextColor(context.getResources().getColor(android.R.color.black));
                     }
                     else{
-                       proximoHorario.setTextOff("Prox. \n" + tempoRestante( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ));
+                       proximoHorario.setTextOff( context.getResources().getString( R.string.proximo, tempoRestante( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ) ) );
                        proximoHorario.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
                     }
                 }
             });
-
         }
 
         public void bind() {
@@ -165,7 +160,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             int position = getAdapterPosition();
             boolean isSelected = position == selectedItem;
 
-            proximoHorario.setText( "Prox. \n" + proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() ) );
+            proximoHorario.setText( context.getResources().getString( R.string.proximo, proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() ) ) );
             descricao.setText( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getDescricao() );
             descricao.setSelected(isSelected);
             expandableLayout.setExpanded(isSelected, false);
@@ -190,7 +185,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
 
         @Override
         public void onClick(View view) {
-
             ViewHolder holder = (ViewHolder) recyclerView.findViewHolderForAdapterPosition(selectedItem);
 
             if (holder != null) {
@@ -218,7 +212,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 recyclerView.smoothScrollToPosition(getAdapterPosition());
             }
         }
-
     }
 
     public boolean checkLinhaFavoita( int linhaIDFK, int itinerarioIDFK, int estacaoIDFK ){
@@ -268,11 +261,8 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         List<Horarios> horariosList = new ArrayList<>();
 
         for (int e = 0 ; e  < linha.getItinerarios().get(itinerario).getEstacaoList().size() ; e ++) {
-
             if ( linha.getItinerarios().get(itinerario).getEstacaoList().get(e).getEstacaoID() == estacao) {
-
                 horariosList = linha.getItinerarios().get(itinerario).getEstacaoList().get(e).getHorariosList();
-
                 for (int i = 0; i < horariosList.size(); i++) {
                     if (horariosList.get(i).getPeriodo() == 0) {
                         if (i == 0) {
@@ -315,7 +305,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             String d = day + "/" + month + "/" + year + " " + hora + ":00";
 
             try {
-                gcHora.setTime(sdfFormat2.parse(d));
+                gcHora.setTime( sdfFormat2.parse(d) );
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -343,7 +333,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 linhaFavoritas = configuracaoDatabase.linhaFavoritaDAO().getLinhaList();
             }
         });
-
     }
 
     public void addLinhaFavorita(Linha linha, int itinerario, int estacao){
@@ -414,7 +403,8 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         Date hora = null;
         try {
             hora = sdfToDate.parse(date);
-        } catch (ParseException ex) {
+        }
+        catch (ParseException ex) {
             Logger.getLogger(CustomGridViewActivity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -488,7 +478,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
 
             updatingForDynamicLocationViews();
         }
-
     }
 
     private void updatingForDynamicLocationViews() {
