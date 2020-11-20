@@ -1,8 +1,10 @@
 package com.gustavobrunoro.horabusao.Activity;
 
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -37,14 +42,22 @@ public class LinhaFavoritasFragment extends Fragment {
     @Override
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
+        setHasOptionsMenu(true);
     }
 
     @Override
     public void onResume () {
         super.onResume();
         carregaLinhasFavoritas ();
+    }
+
+    @Override
+    public void onCreateOptionsMenu (@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main, menu);
+        final MenuItem item = menu.findItem(R.id.menu_search);
+        item.setVisible(false);
     }
 
     @Override

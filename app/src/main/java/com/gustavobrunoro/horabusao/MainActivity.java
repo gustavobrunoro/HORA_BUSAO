@@ -10,7 +10,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -25,6 +27,7 @@ import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
 import com.gustavobrunoro.horabusao.Helper.CommonUtils;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FragmentPagerItemAdapter adapter;
     private ConfiguracaoDatabase configuracaoDatabase;
     private Bundle bundle = new Bundle();
+    private MaterialSearchView searchView;
 
     private List<Linha> linhas = new ArrayList<>();
     private List<LinhaFavorita> linhaFavoritas = new ArrayList<>();
@@ -85,6 +89,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         viewPager.setAdapter( adapter );
         viewPagerTab.setViewPager( viewPager );
+
+//        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                Log.i("Controle", query );
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                Log.i("Controle", newText );
+//
+//                return false;
+//            }
+//        });
+//        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+//            @Override
+//            public void onSearchViewShown() {
+//            }
+//
+//            @Override
+//            public void onSearchViewClosed() {
+//            }
+//        });
+
     }
 
     @Override
@@ -100,9 +129,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        if (searchView.isSearchOpen()) {
+            searchView.closeSearch();
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu (Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main,menu);
+        final MenuItem item = menu.findItem(R.id.menu_search);
+        return  true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_Atualizar:
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -125,6 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void inicializaComponentes () {
         toolbar              = findViewById(R.id.toolbar);
+        searchView           = findViewById(R.id.search_view);
         drawer               = findViewById(R.id.drawer_layout2);
         navigationView       = findViewById(R.id.nav_view);
         headerView           = navigationView.getHeaderView(0);

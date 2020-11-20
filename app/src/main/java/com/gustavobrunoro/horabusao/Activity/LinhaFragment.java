@@ -1,13 +1,21 @@
 package com.gustavobrunoro.horabusao.Activity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -16,9 +24,12 @@ import com.gustavobrunoro.horabusao.Adapter.AdapterLinha;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
 import com.gustavobrunoro.horabusao.Helper.RecyclerItemClickListener;
+import com.gustavobrunoro.horabusao.MainActivity;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
 import com.gustavobrunoro.horabusao.R;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +41,7 @@ public class LinhaFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private List<Linha> linhas = new ArrayList<>();
     private AdapterLinha adapter;
+    private MaterialSearchView searchView;
 
     private ConfiguracaoDatabase configuracaoDatabase;
 
@@ -39,6 +51,7 @@ public class LinhaFragment extends Fragment {
         if (getArguments() != null) {
             linhas = (List<Linha>) getArguments().getSerializable("Linhas");
         }
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -48,12 +61,43 @@ public class LinhaFragment extends Fragment {
     }
 
     @Override
+    public void onCreateOptionsMenu (@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main, menu);
+        final MenuItem item = menu.findItem(R.id.menu_search);
+        searchView.setMenuItem(item);
+    }
+
+    @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_linha, container, false);
 
         inicializaComponentes ();
         atualizaRecycleView(linhas);
+
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+            }
+        });
 
         recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
@@ -74,7 +118,8 @@ public class LinhaFragment extends Fragment {
     }
 
     private void inicializaComponentes (){
-        recyclerView  = view.findViewById( R.id.rv_Linhas );
+        recyclerView         = view.findViewById( R.id.rv_Linhas );
+        searchView           = getActivity().findViewById(R.id.search_view);
         configuracaoDatabase = ConfiguracaoDatabase.getInstance( getContext() );
     }
 

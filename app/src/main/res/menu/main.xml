@@ -3,8 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_Atualizar"
+        android:id="@+id/menu_Atualizar"
         android:title="Atualizar Hórarios"
         app:showAsAction="never" />
+
+    <item android:id="@+id/menu_search"
+        android:title="Pesquisa"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_search_24"/>
 
 </menu>
