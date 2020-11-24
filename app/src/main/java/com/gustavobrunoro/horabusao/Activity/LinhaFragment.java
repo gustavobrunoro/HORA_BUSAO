@@ -77,6 +77,7 @@ public class LinhaFragment extends Fragment {
         inicializaComponentes ();
         atualizaRecycleView(linhas);
 
+
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
