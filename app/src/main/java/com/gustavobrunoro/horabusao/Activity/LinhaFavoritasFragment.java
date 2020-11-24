@@ -73,10 +73,9 @@ public class LinhaFavoritasFragment extends Fragment {
     }
 
     public void inicializaComponentes () {
-        toolbar      = view.findViewById(R.id.toolbar);
-        aviso        = view.findViewById(R.id.tv_AvisoLinhaFavoritas);
-        recyclerView = view.findViewById(R.id.rv_favoritas);
-
+        toolbar              = view.findViewById(R.id.toolbar);
+        aviso                = view.findViewById(R.id.tv_AvisoLinhaFavoritas);
+        recyclerView         = view.findViewById(R.id.rv_favoritas);
         configuracaoDatabase = ConfiguracaoDatabase.getInstance( getContext() );
     }
 

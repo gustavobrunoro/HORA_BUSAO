@@ -89,15 +89,6 @@ public class LinhaFragment extends Fragment {
                 return false;
             }
         });
-        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
-            @Override
-            public void onSearchViewShown() {
-            }
-
-            @Override
-            public void onSearchViewClosed() {
-            }
-        });
 
         recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
@@ -117,7 +108,7 @@ public class LinhaFragment extends Fragment {
         return view;
     }
 
-    private void inicializaComponentes (){
+    public void inicializaComponentes (){
         recyclerView         = view.findViewById( R.id.rv_Linhas );
         searchView           = getActivity().findViewById(R.id.search_view);
         configuracaoDatabase = ConfiguracaoDatabase.getInstance( getContext() );

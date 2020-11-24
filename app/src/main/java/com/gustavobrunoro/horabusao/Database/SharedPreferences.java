@@ -46,7 +46,7 @@ public class SharedPreferences {
     }
 
     public void clear (){
-
+        editor.clear().commit();
     }
 
 }

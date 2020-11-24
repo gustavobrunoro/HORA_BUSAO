@@ -24,6 +24,7 @@ import com.gustavobrunoro.horabusao.Activity.LinhaFragment;
 import com.gustavobrunoro.horabusao.Activity.SobreActivity;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
+import com.gustavobrunoro.horabusao.Database.SharedPreferences;
 import com.gustavobrunoro.horabusao.Helper.CommonUtils;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
@@ -89,31 +90,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         viewPager.setAdapter( adapter );
         viewPagerTab.setViewPager( viewPager );
-
-//        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                Log.i("Controle", query );
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                Log.i("Controle", newText );
-//
-//                return false;
-//            }
-//        });
-//        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
-//            @Override
-//            public void onSearchViewShown() {
-//            }
-//
-//            @Override
-//            public void onSearchViewClosed() {
-//            }
-//        });
-
     }
 
     @Override
@@ -154,6 +130,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_Atualizar:
+                SharedPreferences sharedPreferences = new SharedPreferences(getApplicationContext());
+                sharedPreferences.clear();
                 return true;
         }
         return super.onOptionsItemSelected(item);
