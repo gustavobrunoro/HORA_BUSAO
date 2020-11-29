@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "115482171013",
+    "firebase_url": "https://hora-busao.firebaseio.com",
+    "project_id": "hora-busao",
+    "storage_bucket": "hora-busao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115482171013:android:44e633a7e0ccebf1847bec",
+        "android_client_info": {
+          "package_name": "com.gustavobrunoro.horabusao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115482171013-ifa1mbsuip6tdtsh4hdndee99eobi4d3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gustavobrunoro.horabusao",
+            "certificate_hash": "00201a2e10b8a15a184e8161b6fc0cbfada84bff"
+          }
+        },
+        {
+          "client_id": "115482171013-ma1mvf6al3e6cb63qo19jtoao1087keo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSftcgy6LvdLSWmjqDXM1pQB98Qwg95Fc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115482171013-ma1mvf6al3e6cb63qo19jtoao1087keo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
