@@ -98,7 +98,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentTitle( notificacao.getNotification().getTitle())
                 .setContentText( notificacao.getNotification().getBody())
                // .setSmallIcon( R.drawable.notificacao )
-                .setSound( uriSom )
+                .setSound( uriSom );
                 //.addAction( notificationCompatAtualiza );
 
         //Recupera NOtificação

@@ -342,7 +342,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         linhaFavorita.setLinhaIDFK( linha.getLinhaID() );
         linhaFavorita.setDescricaoLinha( linha.getDescricao() );
 
-        linhaFavorita.setNumero(  linha.getNumero() );
+        linhaFavorita.setNumero( linha.getNumero() );
 
         linhaFavorita.setItinerarioIDFK( itinerario );
         linhaFavorita.setDescricaoIntinerario( linha.getItinerarios().get(itinerario).getDescricao() );
@@ -363,6 +363,8 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 configuracaoDatabase.linhaFavoritaDAO().inserLinhaFavorita( linhaFavorita );
             }
         });
+
+        //linhaFavorita.salvaLinhaFavoritaFirebaseCloud(linhaFavorita);
 
     }
 

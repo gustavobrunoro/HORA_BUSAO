@@ -35,10 +35,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:firebase-storage'
-    implementation 'com.google.firebase:firebase-messaging'
+
+    //Implementações Firebase
+    implementation 'com.google.firebase:firebase-analytics' //Implementação Firebase Análise
+    implementation 'com.google.firebase:firebase-messaging' //Implementação Firebase Cloud Messaging
+    implementation 'com.google.firebase:firebase-auth'      //Implementação Firebase Authentication
+    implementation 'com.google.firebase:firebase-storage'   //Implementação Firebase Cloud Storage
+
+    implementation 'com.google.firebase:firebase-database'  //Implementação Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-firestore' //Implementação Firebase Cloud Firestore
 
     //Implementação do Card Slider
     implementation 'com.github.IslamKhSh:CardSlider:1.0.1'

@@ -19,8 +19,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.gustavobrunoro.horabusao.Adapter.AdapterLinhaFavorita;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
+import com.gustavobrunoro.horabusao.Database.ConfiguracaoFirebase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
 import com.gustavobrunoro.horabusao.R;
@@ -38,6 +42,8 @@ public class LinhaFavoritasFragment extends Fragment {
     private ConfiguracaoDatabase configuracaoDatabase;
     private List<LinhaFavorita> linhaFavoritas = new ArrayList<>();
     private AdapterLinhaFavorita adapter;
+
+
 
     @Override
     public void onCreate (Bundle savedInstanceState) {
