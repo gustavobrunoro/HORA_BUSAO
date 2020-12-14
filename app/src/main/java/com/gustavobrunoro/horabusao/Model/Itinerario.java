@@ -14,7 +14,7 @@ public class Itinerario implements Serializable {
     private int LinhaIDFk;
     private String Descricao;
     @TypeConverters(DataConverterEstacao.class)
-    private List<Estacao> EstacaoList = new ArrayList<>();
+    private List<Estacao> Estacoes = new ArrayList<>();
 
     public Itinerario () {
     }
@@ -43,11 +43,11 @@ public class Itinerario implements Serializable {
         Descricao = descricao;
     }
 
-    public List<Estacao> getEstacaoList () {
-        return EstacaoList;
+    public List<Estacao> getEstacoes () {
+        return Estacoes;
     }
 
-    public void setEstacaoList (List<Estacao> estacaoList) {
-        this.EstacaoList = estacaoList;
+    public void setEstacoes (List<Estacao> estacoes) {
+        this.Estacoes = estacoes;
     }
 }

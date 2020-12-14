@@ -2,26 +2,12 @@ package com.gustavobrunoro.horabusao.Model;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
+
 import androidx.room.Entity;
 import androidx.room.TypeConverters;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Exclude;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.gustavobrunoro.horabusao.Database.ConfiguracaoFirebase;
 import com.gustavobrunoro.horabusao.Database.HELP.DataConverterEstacao1;
-import com.gustavobrunoro.horabusao.Helper.Base64Custom;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 @Entity(  primaryKeys = {"LinhaIDFK","ItinerarioIDFK","EstacaoIDFK"} )
 public class LinhaFavorita implements Serializable {
@@ -39,18 +25,6 @@ public class LinhaFavorita implements Serializable {
 
     public LinhaFavorita () {
     }
-
-//    public LinhaFavorita (String ID, int linhaFavoritaID, int linhaIDFK, int numero, String descricaoLinha, int itinerarioIDFK, String descricaoIntinerario, int estacaoIDFK, Estacao estacao) {
-//        this.ID = ID;
-//        LinhaFavoritaID = linhaFavoritaID;
-//        LinhaIDFK = linhaIDFK;
-//        Numero = numero;
-//        DescricaoLinha = descricaoLinha;
-//        ItinerarioIDFK = itinerarioIDFK;
-//        DescricaoIntinerario = descricaoIntinerario;
-//        EstacaoIDFK = estacaoIDFK;
-//        this.estacao = estacao;
-//    }
 
     public String getID () {
         return ID;
@@ -124,65 +98,4 @@ public class LinhaFavorita implements Serializable {
         this.estacao = estacao;
     }
 
-    @Exclude
-    public Map<String,Object> ConverteMap(){
-
-        HashMap<String,Object> map = new HashMap<>();
-
-        map.put("LinhaFavoritaID",getLinhaFavoritaID());
-        map.put("LinhaIDFK",getLinhaIDFK());
-        map.put("Numero",getNumero());
-        map.put("DescricaoLinha",getDescricaoLinha());
-        map.put("ItinerarioIDFK",getItinerarioIDFK());
-
-        map.put("EstacaoIDFK",getEstacaoIDFK());
-        map.put("estacao",getEstacao());
-
-        return  map;
-
-    }
-
-    public void salvaLinhaFavoritaFirebaseRealtime(){
-
-        DatabaseReference databaseReference = ConfiguracaoFirebase.getDatabaseReference();
-        FirebaseAuth firebaseAuth = ConfiguracaoFirebase.getFirebaseAutenticao();
-
-        //String usuario = Base64Custom.CodificarBase64(firebaseAuth.getCurrentUser().getEmail());
-        String usuario = Base64Custom.CodificarBase64("gustavobrunoro@hotmail.com");
-
-        if (getID() == null ) {
-            databaseReference.child( "ClienteID" ).child( usuario ).push().setValue( this );
-        }else{
-            databaseReference.child( "ClienteID" ).child( usuario );
-            databaseReference.updateChildren( ConverteMap() );
-        }
-    }
-
-    public void salvaLinhaFavoritaFirebaseCloud(LinhaFavorita linhaFavorita){
-
-        FirebaseFirestore db = ConfiguracaoFirebase.getCloudStorange();
-
-        //String usuario = Base64Custom.CodificarBase64("gustavobrunoro@hotmail.com");
-
-        db.collection("Clientes")
-                .document("123456789")
-                .collection("Usuarios")
-                .document("02069375552")
-                .collection("LinhasFavoritas")
-                .document()
-                .set(linhaFavorita)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.i("Controle" , "DocumentSnapshot successfully written!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i("Controle" , "Error writing document", e);
-                    }
-                });
-
-    }
 }

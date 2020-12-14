@@ -2,14 +2,10 @@ package com.gustavobrunoro.horabusao.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.github.islamkhsh.CardSliderViewPager;
@@ -46,8 +42,8 @@ public class HorariosActivity extends AppCompatActivity {
 
         if (linha != null ){
             numero         = linha.getNumero();
-            descricaoLinha = linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getDescricao();
-            horariosList   = linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getHorariosList();
+            descricaoLinha = linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getDescricao();
+            horariosList   = linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getHorarios();
         }
         else {
             numero         = (Integer) getIntent().getIntExtra("Numero",0);

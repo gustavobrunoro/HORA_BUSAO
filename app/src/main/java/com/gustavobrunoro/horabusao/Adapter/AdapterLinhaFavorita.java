@@ -82,7 +82,7 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
         holder.GradeHorario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                gradeHorarios( linhaFavoritas.get(position).getNumero(), linhaFavoritas.get(position).getDescricaoLinha(), linhaFavoritas.get(position).getEstacao().getHorariosList() );
+                gradeHorarios( linhaFavoritas.get(position).getNumero(), linhaFavoritas.get(position).getDescricaoLinha(), linhaFavoritas.get(position).getEstacao().getHorarios() );
             }
         });
     }
@@ -152,7 +152,7 @@ public class AdapterLinhaFavorita extends RecyclerView.Adapter<AdapterLinhaFavor
 
         for (int e = 0 ; e  < linhaFavoritas.size() ; e ++) {
             if ( linhaFavoritas.get(e).getEstacao().getEstacaoID() == estacao) {
-                horariosList = linhaFavoritas.get(e).getEstacao().getHorariosList();
+                horariosList = linhaFavoritas.get(e).getEstacao().getHorarios();
                 for (int h = 0; h < horariosList.size(); h++) {
                     if (horariosList.get(h).getPeriodo() == 0) {
                         if (h == 0) {

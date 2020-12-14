@@ -3,17 +3,17 @@
 		"LinhaID": 1,
 		"Numero": 1,
 		"Descricao": "AEROPORTO X RODOVIÁRIA - Via ESTELA REIS",
-		"itinerarios": [
+		"Itinerarios": [
 			{
 				"ItinerarioID": 1,
 				"LinhaIDFk": 1,
 				"Descricao": "AEROPORTO X RODOVIÁRIA - Via ESTELA REIS",
-				"EstacaoList": [
+				"Estacoes": [
 					{   "EstacaoID": 1,
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto A",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
 							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
 							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
@@ -55,7 +55,7 @@
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto B",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
 							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
 							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
@@ -79,7 +79,7 @@
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto C",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
 							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
 							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
@@ -103,7 +103,7 @@
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto D",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
 							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
 							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
@@ -129,12 +129,12 @@
 				"ItinerarioID": 2,
 				"LinhaIDFk": 1,
 				"Descricao": "RODOVIÁRIA x AEROPORTO - Via ESTELA REIS",
-				"EstacaoList": [
+				"Estacoes": [
 					{   "EstacaoID": 5,
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 2,
 						"Descricao": "Ponto E",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
 							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
 							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
@@ -157,7 +157,7 @@
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 2,
 						"Descricao": "Ponto F",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
 							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
 							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
@@ -180,7 +180,7 @@
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 2,
 						"Descricao": "Ponto G",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
 							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
 							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
@@ -203,7 +203,7 @@
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 2,
 						"Descricao": "Ponto H",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
 							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
 							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
@@ -231,17 +231,17 @@
 		"LinhaID": 3,
 		"Numero": 3,
 		"Descricao": "AEROPORTO X URBIS III",
-		"itinerarios": [
+		"Itinerarios": [
 			{
 				"ItinerarioID": 3,
 				"LinhaIDFk": 3,
 				"Descricao": "AEROPORTO X URBIS III",
-				"EstacaoList": [
+				"Estacoes": [
 					{   "EstacaoID": 9,
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 3,
 						"Descricao": "Ponto H",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
@@ -262,7 +262,7 @@
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 3,
 						"Descricao": "Ponto I",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
@@ -282,7 +282,7 @@
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 3,
 						"Descricao": "Ponto J",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
@@ -303,7 +303,7 @@
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 3,
 						"Descricao": "Ponto L",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
@@ -326,12 +326,12 @@
 				"ItinerarioID": 4,
 				"LinhaIDFk": 3,
 				"Descricao": "URBIS III X AEROPORTO",
-				"EstacaoList": [
+				"Estacoes": [
 					{   "EstacaoID": 13,
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 4,
 						"Descricao": "Ponto M",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
@@ -352,7 +352,7 @@
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 4,
 						"Descricao": "Ponto N",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
@@ -373,7 +373,7 @@
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 4,
 						"Descricao": "Ponto O",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
@@ -394,7 +394,7 @@
 						"LinhaIDFK": 3,
 						"ItinerarioIDFK": 4,
 						"Descricao": "Ponto P",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
@@ -420,17 +420,17 @@
 		"LinhaID": 4,
 		"Numero": 4,
 		"Descricao": "RENOVAÇÃO x URBIS III",
-		"itinerarios": [
+		"Itinerarios": [
 			{
 				"ItinerarioID": 5,
 				"LinhaIDFk": 4,
 				"Descricao": "RENOVAÇÃO x URBIS III",
-				"EstacaoList": [
+				"Estacoes": [
 					{   "EstacaoID": 17,
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 5,
 						"Descricao": "Ponto H",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 58, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 59, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 60, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
@@ -451,7 +451,7 @@
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 5,
 						"Descricao": "Ponto I",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 71, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 72, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 73, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
@@ -471,7 +471,7 @@
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 5,
 						"Descricao": "Ponto J",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 84, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 85, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 86, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
@@ -492,7 +492,7 @@
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 5,
 						"Descricao": "Ponto L",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 96, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
 							{ "HorariosID": 97, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
 							{ "HorariosID": 98, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
@@ -515,12 +515,12 @@
 				"ItinerarioID": 6,
 				"LinhaIDFk": 4,
 				"Descricao": "URBIS III X RENOVAÇÃO",
-				"EstacaoList": [
+				"Estacoes": [
 					{   "EstacaoID": 21,
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 6,
 						"Descricao": "Ponto M",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 104, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 105, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 106, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
@@ -541,7 +541,7 @@
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 6,
 						"Descricao": "Ponto N",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 117, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 118, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 119, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
@@ -562,7 +562,7 @@
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 6,
 						"Descricao": "Ponto O",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 130, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 131, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 132, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
@@ -583,7 +583,7 @@
 						"LinhaIDFK": 4,
 						"ItinerarioIDFK": 6,
 						"Descricao": "Ponto P",
-						"HorariosList": [
+						"Horarios": [
 							{ "HorariosID": 143, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
 							{ "HorariosID": 144, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
 							{ "HorariosID": 145, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },

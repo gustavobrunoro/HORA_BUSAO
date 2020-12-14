@@ -93,7 +93,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
 
     @Override
     public int getItemCount () {
-        return linha.getItinerarios().get(itinerario).getEstacaoList().size();
+        return linha.getItinerarios().get(itinerario).getEstacoes().size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ExpandableLayout.OnExpansionUpdateListener {
@@ -144,11 +144,11 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 @Override
                 public void onCheckedChanged (CompoundButton compoundButton, boolean b) {
                     if (b){
-                       proximoHorario.setTextOn( context.getResources().getString( R.string.proximo, proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ) ) );
+                       proximoHorario.setTextOn( context.getResources().getString( R.string.proximo, proximoHorario( linha.getItinerarios().get(itinerario).getEstacoes().get( getAdapterPosition() ).getEstacaoID() ) ) );
                        proximoHorario.setTextColor(context.getResources().getColor(android.R.color.black));
                     }
                     else{
-                       proximoHorario.setTextOff( context.getResources().getString( R.string.proximo, tempoRestante( linha.getItinerarios().get(itinerario).getEstacaoList().get( getAdapterPosition() ).getEstacaoID() ) ) );
+                       proximoHorario.setTextOff( context.getResources().getString( R.string.proximo, tempoRestante( linha.getItinerarios().get(itinerario).getEstacoes().get( getAdapterPosition() ).getEstacaoID() ) ) );
                        proximoHorario.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
                     }
                 }
@@ -160,13 +160,13 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             int position = getAdapterPosition();
             boolean isSelected = position == selectedItem;
 
-            proximoHorario.setText( context.getResources().getString( R.string.proximo, proximoHorario( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() ) ) );
-            descricao.setText( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getDescricao() );
+            proximoHorario.setText( context.getResources().getString( R.string.proximo, proximoHorario( linha.getItinerarios().get(itinerario).getEstacoes().get(position).getEstacaoID() ) ) );
+            descricao.setText( linha.getItinerarios().get(itinerario).getEstacoes().get(position).getDescricao() );
             descricao.setSelected(isSelected);
             expandableLayout.setExpanded(isSelected, false);
-            linhaFavorita.setTag( linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() );
+            linhaFavorita.setTag( linha.getItinerarios().get(itinerario).getEstacoes().get(position).getEstacaoID() );
 
-            if (checkLinhaFavoita(linha.getLinhaID(), itinerario, linha.getItinerarios().get(itinerario).getEstacaoList().get(position).getEstacaoID() )){
+            if (checkLinhaFavoita(linha.getLinhaID(), itinerario, linha.getItinerarios().get(itinerario).getEstacoes().get(position).getEstacaoID() )){
                 linhaFavorita.setLiked(true);
             }
 
@@ -260,9 +260,9 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         String hora = " - ";
         List<Horarios> horariosList = new ArrayList<>();
 
-        for (int e = 0 ; e  < linha.getItinerarios().get(itinerario).getEstacaoList().size() ; e ++) {
-            if ( linha.getItinerarios().get(itinerario).getEstacaoList().get(e).getEstacaoID() == estacao) {
-                horariosList = linha.getItinerarios().get(itinerario).getEstacaoList().get(e).getHorariosList();
+        for (int e = 0; e  < linha.getItinerarios().get(itinerario).getEstacoes().size() ; e ++) {
+            if ( linha.getItinerarios().get(itinerario).getEstacoes().get(e).getEstacaoID() == estacao) {
+                horariosList = linha.getItinerarios().get(itinerario).getEstacoes().get(e).getHorarios();
                 for (int i = 0; i < horariosList.size(); i++) {
                     if (horariosList.get(i).getPeriodo() == 0) {
                         if (i == 0) {
@@ -347,13 +347,13 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         linhaFavorita.setItinerarioIDFK( itinerario );
         linhaFavorita.setDescricaoIntinerario( linha.getItinerarios().get(itinerario).getDescricao() );
 
-        linhaFavorita.setEstacaoIDFK( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getEstacaoID() );
+        linhaFavorita.setEstacaoIDFK( linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getEstacaoID() );
 
         Estacao e = new Estacao();
 
-        e.setEstacaoID( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getEstacaoID()  );
-        e.setDescricao( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getDescricao() );
-        e.setHorariosList( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getHorariosList() );
+        e.setEstacaoID( linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getEstacaoID()  );
+        e.setDescricao( linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getDescricao() );
+        e.setHorarios( linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getHorarios() );
 
         linhaFavorita.setEstacao( e );
 
@@ -363,9 +363,6 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 configuracaoDatabase.linhaFavoritaDAO().inserLinhaFavorita( linhaFavorita );
             }
         });
-
-        //linhaFavorita.salvaLinhaFavoritaFirebaseCloud(linhaFavorita);
-
     }
 
     public void removeLinhaFavorita(Linha linha, int itinerario, int estacao,final LikeButton likeButton){
@@ -374,11 +371,11 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
 
         linhaFavorita.setLinhaIDFK(linha.getLinhaID());
         linhaFavorita.setItinerarioIDFK(itinerario);
-        linhaFavorita.setEstacaoIDFK( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getEstacaoID() );
+        linhaFavorita.setEstacaoIDFK( linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getEstacaoID() );
 
         Estacao e = new Estacao();
 
-        e.setEstacaoID( linha.getItinerarios().get(itinerario).getEstacaoList().get(estacao).getEstacaoID()  );
+        e.setEstacaoID( linha.getItinerarios().get(itinerario).getEstacoes().get(estacao).getEstacaoID()  );
 
         linhaFavorita.setEstacao( e );
 

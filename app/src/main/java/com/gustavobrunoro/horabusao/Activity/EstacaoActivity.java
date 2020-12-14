@@ -16,10 +16,6 @@ import com.gustavobrunoro.horabusao.Adapter.AdapterEstacao;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.R;
 
-import smartdevelop.ir.eram.showcaseviewlib.GuideView;
-
-import static com.gustavobrunoro.horabusao.R.drawable.ic_baseline_autorenew_24;
-
 public class EstacaoActivity extends AppCompatActivity {
 
     private Toolbar toolbar;

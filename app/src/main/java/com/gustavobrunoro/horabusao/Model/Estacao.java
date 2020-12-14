@@ -15,7 +15,7 @@ public class Estacao implements Serializable {
     private int ItinerarioIDFK;
     private String Descricao;
     @TypeConverters(DataConverterHorario.class)
-    private List<Horarios> HorariosList = new ArrayList<>();
+    private List<Horarios> Horarios = new ArrayList<>();
 
     public Estacao () {
     }
@@ -52,11 +52,11 @@ public class Estacao implements Serializable {
         Descricao = descricao;
     }
 
-    public List<Horarios> getHorariosList () {
-        return HorariosList;
+    public List<Horarios> getHorarios () {
+        return Horarios;
     }
 
-    public void setHorariosList (List<Horarios> horariosList) {
-        HorariosList = horariosList;
+    public void setHorarios (List<Horarios> horarios) {
+        Horarios = horarios;
     }
 }

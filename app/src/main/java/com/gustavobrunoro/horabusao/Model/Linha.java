@@ -18,7 +18,7 @@ public class Linha implements Serializable {
     private int Numero;
     private String Descricao;
     @TypeConverters(DataConverterItinerario.class)
-    private List<Itinerario> itinerarios = new ArrayList<>();
+    private List<Itinerario> Itinerarios = new ArrayList<>();
     private int Favorita;
 
     public Linha () {
@@ -49,11 +49,11 @@ public class Linha implements Serializable {
     }
 
     public List<Itinerario> getItinerarios () {
-        return itinerarios;
+        return Itinerarios;
     }
 
     public void setItinerarios (List<Itinerario> itinerarios) {
-        this.itinerarios = itinerarios;
+        this.Itinerarios = itinerarios;
     }
 
     public int getFavorita () {

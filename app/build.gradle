@@ -42,17 +42,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'      //Implementação Firebase Authentication
     implementation 'com.google.firebase:firebase-storage'   //Implementação Firebase Cloud Storage
 
-    implementation 'com.google.firebase:firebase-database'  //Implementação Firebase Realtime Database
-    implementation 'com.google.firebase:firebase-firestore' //Implementação Firebase Cloud Firestore
-
     //Implementação do Card Slider
     implementation 'com.github.IslamKhSh:CardSlider:1.0.1'
 
     //Implementacao GSON
     implementation 'com.google.code.gson:gson:2.8.6'
-
-    //Implementacao Rating ( Favorito )
-    //implementation 'com.github.ome450901:SimpleRatingBar:1.5.0'
 
     //Implementacao ROOM
     implementation "androidx.room:room-runtime:2.2.5"
