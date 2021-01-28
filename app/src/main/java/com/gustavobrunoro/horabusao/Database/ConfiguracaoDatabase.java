@@ -18,7 +18,7 @@ import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
 
 @TypeConverters({RoomTypeConverters.class, DataConverterItinerario.class, DataConverterHorario.class, DataConverterEstacao.class, DataConverterEstacao1.class})
-@Database(entities = {Linha.class, LinhaFavorita.class}, version = 3)
+@Database(entities = {Linha.class, LinhaFavorita.class}, version = 4)
 public abstract class ConfiguracaoDatabase extends RoomDatabase {
 
     private static final  String DB_NAME = "HoraOnibus";

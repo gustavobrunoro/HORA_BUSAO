@@ -2,16 +2,25 @@ package com.gustavobrunoro.horabusao.Model;
 
 public class Preferencias {
 
-    boolean primeiroAcesso;
+    boolean DownloadLinhas;
+    boolean Tutorial;
 
     public Preferencias () {
     }
 
     public boolean isPrimeiroAcesso () {
-        return primeiroAcesso;
+        return Tutorial;
     }
 
     public void setPrimeiroAcesso (boolean primeiroAcesso) {
-        this.primeiroAcesso = primeiroAcesso;
+        this.Tutorial = primeiroAcesso;
+    }
+
+    public boolean isDownloadLinhas () {
+        return DownloadLinhas;
+    }
+
+    public void setDownloadLinhas (boolean downloadLinhas) {
+        DownloadLinhas = downloadLinhas;
     }
 }

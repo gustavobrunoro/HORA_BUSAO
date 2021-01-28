@@ -17,7 +17,7 @@ public class RetrofitConfig {
 
     /**Metodos Responsavel por Retorna Paramentro de Conexão com a API
      @return  Paramento Retrofit*/
-    public static retrofit2.Retrofit getRetrofit(final Usuario usuario){
+    public static retrofit2.Retrofit getRetrofit(){
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
