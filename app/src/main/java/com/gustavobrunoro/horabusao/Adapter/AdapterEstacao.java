@@ -2,6 +2,7 @@ package com.gustavobrunoro.horabusao.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.gustavobrunoro.horabusao.Activity.HorariosActivity;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
@@ -23,6 +25,7 @@ import com.gustavobrunoro.horabusao.Model.Estacao;
 import com.gustavobrunoro.horabusao.Model.Horarios;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
+import com.gustavobrunoro.horabusao.Model.LocalOnibus;
 import com.gustavobrunoro.horabusao.Model.Preferencias;
 import com.gustavobrunoro.horabusao.R;
 import com.like.LikeButton;
@@ -37,8 +40,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,6 +65,8 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
 
     private Linha linha = new Linha();
     private int itinerario;
+    private int LocalOnibus;
+    private int proximaParada;
 
     private GuideView mGuideView;
     private GuideView.Builder builder;
@@ -73,6 +81,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         this.linha = linha;
         this.itinerario = itinerario;
         this.view4 = view;
+        LocalOnibus();
     }
 
     @NonNull
@@ -170,17 +179,33 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
                 linhaFavorita.setLiked(true);
             }
 
-            // Expande o Primeiro item
-            if ( position == 0 ){
-                expandableLayout.expand(false);
-                selectedItem = 0;
+            if ( proximaParada == linha.getItinerarios().get(itinerario).getEstacoes().get(position).getEstacaoID() ){
+
+                estacao.setImageResource( R.drawable.img_ponto2 );
+
+                descricao.setSelected(true);
+                expandableLayout.expand();
+                selectedItem = position;
 
                 view1 = itemView.findViewById(R.id.tv_ProximoHorarioID);
                 view2 = itemView.findViewById(R.id.tv_GradeID);
                 view3 = itemView.findViewById(R.id.mfb_LinhaFavoritaID);
 
                 loadTutorial();
+
             }
+
+            // Expande o Primeiro item
+//            if ( position == 0 ){
+//                expandableLayout.expand(false);
+//                selectedItem = 0;
+//
+//                view1 = itemView.findViewById(R.id.tv_ProximoHorarioID);
+//                view2 = itemView.findViewById(R.id.tv_GradeID);
+//                view3 = itemView.findViewById(R.id.mfb_LinhaFavoritaID);
+//
+//                loadTutorial();
+//            }
         }
 
         @Override
@@ -324,6 +349,40 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         else{
             return hora;
         }
+    }
+
+    public void LocalOnibus(){
+
+        List<LocalOnibus> localOnibusList = new ArrayList<>();
+        List<Horarios> horariosList = new ArrayList<>();
+        LocalOnibus localOnibus;
+        int controle = 0;
+        int estacao;
+
+        for (int e = 0; e  < linha.getItinerarios().get( itinerario ).getEstacoes().size() ; e ++) {
+
+            horariosList = linha.getItinerarios().get( itinerario ).getEstacoes().get( e ).getHorarios();
+
+            for (int i = 0; i < horariosList.size(); i++) {
+                localOnibus = new LocalOnibus();
+                localOnibus.setEstacaoID( e );
+                localOnibus.setHora( horariosList.get( i ).getHora() );
+                localOnibusList.add( localOnibus );
+            }
+
+        }
+
+        Collections.sort( localOnibusList );
+
+        for( int i = 0; i < localOnibusList.size() ; i++ )
+        {
+            controle = i + 1 == localOnibusList.size() ? 0 :  i + 1 ;
+
+            if  ( verificaHorario( localOnibusList.get( i ).getHora(), localOnibusList.get( controle ).getHora() ) ){
+                proximaParada = estacao = linha.getItinerarios().get( itinerario ).getEstacoes().get( localOnibusList.get( controle ).getEstacaoID() ).getEstacaoID();
+            }
+        }
+
     }
 
     public void listLinhaFavorita(){
