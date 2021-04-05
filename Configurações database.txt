@@ -1,0 +1,105 @@
+
+ private static DatabaseReference databaseReference;
+ private static FirebaseFirestore cloudStorange;
+
+//region Reatime DataBase
+    public static DatabaseReference getDatabaseReference(){
+        if( databaseReference == null ){
+            FirebaseDatabase.getInstance().setPersistenceEnabled( true );
+            databaseReference = FirebaseDatabase.getInstance().getReference();
+        }
+        return databaseReference;
+    }
+
+    public static DatabaseReference IDUsuario (){
+        String Email = firebaseAuth.getCurrentUser().getEmail();
+        DatabaseReference usuario = ConfiguracaoFirebase.getDatabaseReference().child("Usuarios").child( Base64Custom.CodificarBase64(Email));
+        return usuario;
+    }
+    //endregion
+
+    //region Cloud DataBase
+    public static FirebaseFirestore getCloudStorange(){
+
+        if( cloudStorange == null ){
+
+            cloudStorange = FirebaseFirestore.getInstance();
+        }
+        return cloudStorange;
+    }
+    //endregion
+
+
+*************************************************************************************************************************
+
+ @Exclude
+    public Map<String,Object> ConverteMap(){
+
+        HashMap<String,Object> map = new HashMap<>();
+
+        map.put("LinhaFavoritaID",getLinhaFavoritaID());
+        map.put("LinhaIDFK",getLinhaIDFK());
+        map.put("Numero",getNumero());
+        map.put("DescricaoLinha",getDescricaoLinha());
+        map.put("ItinerarioIDFK",getItinerarioIDFK());
+
+        map.put("EstacaoIDFK",getEstacaoIDFK());
+        map.put("estacao",getEstacao());
+
+        return  map;
+
+    }
+
+    public void salvaLinhaFavoritaFirebaseRealtime(){
+
+        DatabaseReference databaseReference = ConfiguracaoFirebase.getDatabaseReference();
+        FirebaseAuth firebaseAuth = ConfiguracaoFirebase.getFirebaseAutenticao();
+
+        //String usuario = Base64Custom.CodificarBase64(firebaseAuth.getCurrentUser().getEmail());
+        String usuario = Base64Custom.CodificarBase64("gustavobrunoro@hotmail.com");
+
+        if (getID() == null ) {
+            databaseReference.child( "Clientes" )
+                             .child( "123456789" )
+                             .child( "Usuarios" )
+                             .child( "02069375552" )
+                             .child( "LinhasFavoritas" )
+                             .push()
+                             .setValue( this );
+        }else{
+            databaseReference.child( "ClienteID" ).child( usuario );
+            databaseReference.updateChildren( ConverteMap() );
+        }
+    }
+
+    public void salvaLinhaFavoritaFirebaseCloud(LinhaFavorita linhaFavorita){
+
+        FirebaseFirestore db = ConfiguracaoFirebase.getCloudStorange();
+
+        //String usuario = Base64Custom.CodificarBase64("gustavobrunoro@hotmail.com");
+
+        db.collection("Clientes")
+                .document("123456789")
+                .collection("Usuarios")
+                .document("02069375552")
+                .collection("LinhasFavoritas")
+                .document()
+                .set(linhaFavorita)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.i("Controle" , "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i("Controle" , "Error writing document", e);
+                    }
+                });
+
+    }
+***********************************************************************************************************************
+
+linhaFavorita.salvaLinhaFavoritaFirebaseCloud(linhaFavorita);
+linhaFavorita.salvaLinhaFavoritaFirebaseRealtime();
