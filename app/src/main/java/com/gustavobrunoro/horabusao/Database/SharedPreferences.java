@@ -15,6 +15,7 @@ public class SharedPreferences {
 
     // Nome das Chaves
     public static final String PREFERENCIAS = "PREFERENCIAS";
+    public static final String USUARIO = "USUARIO";
 
     private android.content.SharedPreferences sharedPreferences;
     private android.content.SharedPreferences.Editor editor ;
@@ -43,6 +44,24 @@ public class SharedPreferences {
         String json = sharedPreferences.getString(PREFERENCIAS, "");
         preferencias = gson.fromJson(json, Preferencias.class);
         return preferencias ;
+    }
+
+    /**Metodos responsavel atualizar preferencias no SharedPreferences*/
+    public void atualizaUsuario(Usuario usuario){
+        Gson gson = new Gson();
+        String json = gson.toJson(usuario);
+        editor.putString(USUARIO, json);
+        editor.commit();
+    }
+
+    /**Metodos responsavel por recupera os dados pessoais no SharedPreferences
+     @return  Dados do Usuario*/
+    public Usuario recupraUsuario(){
+        Usuario usuario = new Usuario();
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(USUARIO, "");
+        usuario = gson.fromJson(json, Usuario.class);
+        return usuario ;
     }
 
     public void clear (){

@@ -15,14 +15,28 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.Profile;
+import com.facebook.ProfileManager;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.gustavobrunoro.horabusao.API.RetrofitConfig;
 import com.gustavobrunoro.horabusao.API.Rotas;
 import com.gustavobrunoro.horabusao.Activity.LinhaFavoritasFragment;
 import com.gustavobrunoro.horabusao.Activity.LinhaFragment;
+import com.gustavobrunoro.horabusao.Activity.Login.LoginActivity;
 import com.gustavobrunoro.horabusao.Activity.SobreActivity;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
@@ -31,10 +45,14 @@ import com.gustavobrunoro.horabusao.Helper.CommonUtils;
 import com.gustavobrunoro.horabusao.Model.Linha;
 import com.gustavobrunoro.horabusao.Model.LinhaFavorita;
 import com.gustavobrunoro.horabusao.Model.Preferencias;
+import com.gustavobrunoro.horabusao.Model.Usuario;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -57,8 +75,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SmartTabLayout viewPagerTab;
     private FragmentPagerItemAdapter adapter;
     private ConfiguracaoDatabase configuracaoDatabase;
+    private SharedPreferences sharedPreferences;
     private Bundle bundle = new Bundle();
     private MaterialSearchView searchView;
+    private ImageView fotoUsuario;
+    private TextView nomeUsuario;
 
     private List<Linha> linhas = new ArrayList<>();
     private List<LinhaFavorita> linhaFavoritas = new ArrayList<>();
@@ -66,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private Retrofit retrofit;
     private Rotas rotas;
+
+    private GoogleSignInClient googleSignInClient;
 
     private static final String DATA_JSON_PATH = "data.json";
 
@@ -85,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+        loadPerfilUsuario();
 
         //carregaJson();
         downloadLinhas();
@@ -150,6 +175,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Sobre:
                 startActivity(new Intent(getApplicationContext(), SobreActivity.class));
                 break;
+            case R.id.nav_Sair:
+                sair();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -157,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void inicializaComponentes () {
+
         toolbar              = findViewById(R.id.toolbar);
         searchView           = findViewById(R.id.search_view);
         drawer               = findViewById(R.id.drawer_layout2);
@@ -164,7 +193,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         headerView           = navigationView.getHeaderView(0);
         viewPagerTab         = findViewById(R.id.viewPagerTab);
         viewPager            = findViewById(R.id.viewPager);
+        fotoUsuario          = headerView.findViewById(R.id.cim_FotoUsuarioID);
+        nomeUsuario          = headerView.findViewById(R.id.cim_NomeUsuarioID);
+
         configuracaoDatabase = ConfiguracaoDatabase.getInstance(this);
+        sharedPreferences = new SharedPreferences(getApplicationContext());
 
         retrofit = RetrofitConfig.getRetrofit( );
         rotas  = retrofit.create( Rotas.class);
@@ -268,6 +301,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         viewPager.setAdapter( adapter );
         viewPagerTab.setViewPager( viewPager );
+
+    }
+
+    public void sair(){
+
+        // Logout Email e Senha
+        FirebaseAuth.getInstance().signOut();
+
+        // Logout Google
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+        googleSignInClient.signOut();
+
+        // Logout Facebook
+        LoginManager.getInstance().logOut();
+
+        finish();
+        startActivity(new Intent(getBaseContext(), LoginActivity.class));
+
+    }
+
+    public void loadPerfilUsuario(){
+
+        Usuario usuario = new Usuario();
+        usuario = sharedPreferences.recupraUsuario();
+
+        String foto = usuario == null ? "" : usuario.getFacebookFoto();
+
+        Glide.with(MainActivity.this)
+             .load(foto)
+             .centerInside()
+             // .error(R.drawable.erro)
+             .into(fotoUsuario); // id do teu imageView.
+
+        nomeUsuario.setText( usuario == null ? "Nome Usuario" : usuario.getNome() );
 
     }
 

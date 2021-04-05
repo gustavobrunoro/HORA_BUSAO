@@ -34,4 +34,7 @@
     <string name="sobre_instagram">empresadetransportegwg</string>
     <string name="sobre_version"> Versão %s</string>
 
+    <string name="facebook_app_id">760456967942941</string>
+    <string name="fb_login_protocol_scheme">fb760456967942941</string>
+
 </resources>

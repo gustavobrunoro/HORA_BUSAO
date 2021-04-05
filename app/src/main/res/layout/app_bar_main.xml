@@ -25,7 +25,7 @@
         <com.ogaclejapan.smarttablayout.SmartTabLayout
             android:id="@+id/viewPagerTab"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="35dp"
             android:background="@color/primaryColor"
             app:stl_clickable="true"
             app:stl_defaultTabTextAllCaps="true"
