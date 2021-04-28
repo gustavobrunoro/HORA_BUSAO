@@ -6,604 +6,425 @@
 		"Itinerarios": [
 			{
 				"ItinerarioID": 1,
-				"LinhaIDFk": 1,
+				"LinhaIDFK": 1,
 				"Descricao": "AEROPORTO X RODOVIÁRIA - Via ESTELA REIS",
 				"Estacoes": [
-					{   "EstacaoID": 1,
+					{
+						"EstacaoID": 1,
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto A",
+						"Grade_Horarios_Feriados": "08:00 ; 08:30 ; 09:00",
 						"Horarios": [
-							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
-							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
-							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
-							{ "HorariosID": 4, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 0 },
-							{ "HorariosID": 5, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 0 },
-							{ "HorariosID": 6, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 0 },
-							{ "HorariosID": 7, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 0 },
-							{ "HorariosID": 8, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "16:00", "Periodo": 0 },
-							{ "HorariosID": 9, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "17:45", "Periodo": 0 },
-							{ "HorariosID": 58, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:00", "Periodo": 0 },
-							{ "HorariosID": 59, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:10", "Periodo": 0 },
-							{ "HorariosID": 60, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:20", "Periodo": 0 },
-							{ "HorariosID": 61, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:30", "Periodo": 0 },
-							{ "HorariosID": 62, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:40", "Periodo": 0 },
-							{ "HorariosID": 63, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:50", "Periodo": 0 },
-							{ "HorariosID": 64, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "19:00", "Periodo": 0 },
-							{ "HorariosID": 65, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "19:10", "Periodo": 0 },
-							{ "HorariosID": 66, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "19:20", "Periodo": 0 },
-							{ "HorariosID": 67, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "19:30", "Periodo": 0 },
-							{ "HorariosID": 68, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "19:30", "Periodo": 0 },
-							{ "HorariosID": 69, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "19:50", "Periodo": 0 },
-							{ "HorariosID": 70, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "20:10", "Periodo": 0 },
-							{ "HorariosID": 71, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "20:30", "Periodo": 0 },
-							{ "HorariosID": 72, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "20:50", "Periodo": 0 },
-							{ "HorariosID": 73, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "21:10", "Periodo": 0 },
-							{ "HorariosID": 74, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "21:30", "Periodo": 0 },
-							{ "HorariosID": 75, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "21:50", "Periodo": 0 },
-
-							{ "HorariosID": 10, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 1 },
-							{ "HorariosID": 11, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 1 },
-							{ "HorariosID": 12, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 1 },
-							{ "HorariosID": 13, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 1 },
-							{ "HorariosID": 14, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 1 },
-							{ "HorariosID": 15, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 1 },
-							{ "HorariosID": 16, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 1 }
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "08:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "09:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "10:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "11:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "12:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "13:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "14:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "15:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "16:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "17:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "18:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "19:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "21:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "22:01",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "23:01",
+								"Periodo": 0
+							}
 						]
 					},
-					{   "EstacaoID": 2,
+					{
+						"EstacaoID": 2,
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto B",
+						"Grade_Horarios_Feriados": "",
 						"Horarios": [
-							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
-							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
-							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
-							{ "HorariosID": 4, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 0 },
-							{ "HorariosID": 5, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 0 },
-							{ "HorariosID": 6, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 0 },
-							{ "HorariosID": 7, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 0 },
-							{ "HorariosID": 8, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:00", "Periodo": 0 },
-							{ "HorariosID": 9, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "18:30", "Periodo": 0 },
-
-							{ "HorariosID": 10, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 1 },
-							{ "HorariosID": 11, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 1 },
-							{ "HorariosID": 12, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 1 },
-							{ "HorariosID": 13, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 1 },
-							{ "HorariosID": 14, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 1 },
-							{ "HorariosID": 15, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 1 },
-							{ "HorariosID": 16, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 1 }
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "08:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "09:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "10:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "11:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "12:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "13:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "14:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "15:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "16:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "17:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "18:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "19:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "21:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "22:20",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "23:20",
+								"Periodo": 0
+							}
 						]
 					},
-					{   "EstacaoID": 3,
+					{
+						"EstacaoID": 3,
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto C",
+						"Grade_Horarios_Feriados": "",
 						"Horarios": [
-							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
-							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
-							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
-							{ "HorariosID": 4, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 0 },
-							{ "HorariosID": 5, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 0 },
-							{ "HorariosID": 6, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 0 },
-							{ "HorariosID": 7, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 0 },
-							{ "HorariosID": 8, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "16:00", "Periodo": 0 },
-							{ "HorariosID": 9, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "17:45", "Periodo": 0 },
-
-							{ "HorariosID": 10, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 1 },
-							{ "HorariosID": 11, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 1 },
-							{ "HorariosID": 12, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 1 },
-							{ "HorariosID": 13, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 1 },
-							{ "HorariosID": 14, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 1 },
-							{ "HorariosID": 15, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 1 },
-							{ "HorariosID": 16, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 1 }
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "08:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "09:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "10:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "11:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "12:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "13:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "14:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "15:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "16:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "17:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "18:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "19:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "21:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "22:40",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "23:40",
+								"Periodo": 0
+							}
 						]
 					},
-					{ "EstacaoID": 4,
+					{
+						"EstacaoID": 4,
 						"LinhaIDFK": 1,
 						"ItinerarioIDFK": 1,
 						"Descricao": "Ponto D",
+						"Grade_Horarios_Feriados": "",
 						"Horarios": [
-							{ "HorariosID": 1, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 0 },
-							{ "HorariosID": 2, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 0 },
-							{ "HorariosID": 3, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 0 },
-							{ "HorariosID": 4, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 0 },
-							{ "HorariosID": 5, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 0 },
-							{ "HorariosID": 6, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 0 },
-							{ "HorariosID": 7, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 0 },
-							{ "HorariosID": 8, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "16:00", "Periodo": 0 },
-							{ "HorariosID": 9, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "17:45", "Periodo": 0 },
-
-							{ "HorariosID": 10, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "04:45", "Periodo": 1 },
-							{ "HorariosID": 11, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "06:00", "Periodo": 1 },
-							{ "HorariosID": 12, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "07:40", "Periodo": 1 },
-							{ "HorariosID": 13, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "09:20", "Periodo": 1 },
-							{ "HorariosID": 14, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "11:00", "Periodo": 1 },
-							{ "HorariosID": 15, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "12:35", "Periodo": 1 },
-							{ "HorariosID": 16, "LinhaIDFK": 1, "ItinerarioIDFK": 1, "Hora": "14:20", "Periodo": 1 }
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "09:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "10:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "11:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "12:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "13:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "14:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "15:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "16:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "17:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "18:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "19:00 : 20:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "22:00",
+								"Periodo": 0
+							},
+							{
+								"LinhaIDFK": 1,
+								"ItinerarioIDFK": 1,
+								"Hora": "23:00",
+								"Periodo": 0
+							}
 						]
 					}
 				]
 			},
 			{
 				"ItinerarioID": 2,
-				"LinhaIDFk": 1,
+				"LinhaIDFK": 1,
 				"Descricao": "RODOVIÁRIA x AEROPORTO - Via ESTELA REIS",
-				"Estacoes": [
-					{   "EstacaoID": 5,
-						"LinhaIDFK": 1,
-						"ItinerarioIDFK": 2,
-						"Descricao": "Ponto E",
-						"Horarios": [
-							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
-							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
-							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
-							{ "HorariosID": 20, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 0 },
-							{ "HorariosID": 21, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 0 },
-							{ "HorariosID": 22, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 0 },
-							{ "HorariosID": 23, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 0 },
-							{ "HorariosID": 24, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "17:00", "Periodo": 0 },
-
-							{ "HorariosID": 25, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 1 },
-							{ "HorariosID": 26, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 1 },
-							{ "HorariosID": 27, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 1 },
-							{ "HorariosID": 28, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 1 },
-							{ "HorariosID": 29, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 1 },
-							{ "HorariosID": 30, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 1 },
-							{ "HorariosID": 31, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 6,
-						"LinhaIDFK": 1,
-						"ItinerarioIDFK": 2,
-						"Descricao": "Ponto F",
-						"Horarios": [
-							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
-							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
-							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
-							{ "HorariosID": 20, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 0 },
-							{ "HorariosID": 21, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 0 },
-							{ "HorariosID": 22, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 0 },
-							{ "HorariosID": 23, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 0 },
-							{ "HorariosID": 24, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "17:00", "Periodo": 0 },
-
-							{ "HorariosID": 25, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 1 },
-							{ "HorariosID": 26, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 1 },
-							{ "HorariosID": 27, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 1 },
-							{ "HorariosID": 28, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 1 },
-							{ "HorariosID": 29, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 1 },
-							{ "HorariosID": 30, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 1 },
-							{ "HorariosID": 31, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 7,
-						"LinhaIDFK": 1,
-						"ItinerarioIDFK": 2,
-						"Descricao": "Ponto G",
-						"Horarios": [
-							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
-							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
-							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
-							{ "HorariosID": 20, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 0 },
-							{ "HorariosID": 21, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 0 },
-							{ "HorariosID": 22, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 0 },
-							{ "HorariosID": 23, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 0 },
-							{ "HorariosID": 24, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "17:00", "Periodo": 0 },
-
-							{ "HorariosID": 25, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 1 },
-							{ "HorariosID": 26, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 1 },
-							{ "HorariosID": 27, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 1 },
-							{ "HorariosID": 28, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 1 },
-							{ "HorariosID": 29, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 1 },
-							{ "HorariosID": 30, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 1 },
-							{ "HorariosID": 31, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 8,
-						"LinhaIDFK": 1,
-						"ItinerarioIDFK": 2,
-						"Descricao": "Ponto H",
-						"Horarios": [
-							{ "HorariosID": 17, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 0 },
-							{ "HorariosID": 18, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 0 },
-							{ "HorariosID": 19, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 0 },
-							{ "HorariosID": 20, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 0 },
-							{ "HorariosID": 21, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 0 },
-							{ "HorariosID": 22, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 0 },
-							{ "HorariosID": 23, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 0 },
-							{ "HorariosID": 24, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "17:00", "Periodo": 0 },
-
-							{ "HorariosID": 25, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "05:35", "Periodo": 1 },
-							{ "HorariosID": 26, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "06:50", "Periodo": 1 },
-							{ "HorariosID": 27, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "08:30", "Periodo": 1 },
-							{ "HorariosID": 28, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "10:10", "Periodo": 1 },
-							{ "HorariosID": 29, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "11:50", "Periodo": 1 },
-							{ "HorariosID": 30, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "13:30", "Periodo": 1 },
-							{ "HorariosID": 31, "LinhaIDFK": 1, "ItinerarioIDFK": 2, "Hora": "15:10", "Periodo": 1 }
-						]
-					}
-				]
+				"Estacoes": []
 			}
-		],
-		"Favorita": 0
+		]
 	},
 	{
-		"LinhaID": 3,
+		"LinhaID": 2,
 		"Numero": 3,
 		"Descricao": "AEROPORTO X URBIS III",
 		"Itinerarios": [
 			{
 				"ItinerarioID": 3,
-				"LinhaIDFk": 3,
-				"Descricao": "AEROPORTO X URBIS III",
-				"Estacoes": [
-					{   "EstacaoID": 9,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 3,
-						"Descricao": "Ponto H",
-						"Horarios": [
-							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 35, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 36, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 37, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 38, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 39, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 40, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 41, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 42, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 43, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 44, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 10,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 3,
-						"Descricao": "Ponto I",
-						"Horarios": [
-							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 35, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 36, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 37, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 38, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 39, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 40, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 41, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 42, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 43, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 44, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 1 }
-						] },
-					{   "EstacaoID": 11,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 3,
-						"Descricao": "Ponto J",
-						"Horarios": [
-							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 35, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 36, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 37, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 38, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 39, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 40, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 41, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 42, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 43, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 44, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 12,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 3,
-						"Descricao": "Ponto L",
-						"Horarios": [
-							{ "HorariosID": 32, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 33, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 34, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 35, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 36, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 37, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 38, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 39, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 40, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 41, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 42, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 43, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 44, "LinhaIDFK": 3, "ItinerarioIDFK": 3, "Hora": "13:55", "Periodo": 1 }
-						]
-					}
-				]
+				"LinhaIDFK": 2,
+				"Descricao": "ida",
+				"Estacoes": []
 			},
 			{
 				"ItinerarioID": 4,
-				"LinhaIDFk": 3,
-				"Descricao": "URBIS III X AEROPORTO",
-				"Estacoes": [
-					{   "EstacaoID": 13,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 4,
-						"Descricao": "Ponto M",
-						"Horarios": [
-							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 48, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 49, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 50, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 51, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 52, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 53, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 54, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 55, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 56, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 57, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 14,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 4,
-						"Descricao": "Ponto N",
-						"Horarios": [
-							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 48, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 49, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 50, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 51, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 52, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 53, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 54, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 55, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 56, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 57, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 15,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 4,
-						"Descricao": "Ponto O",
-						"Horarios": [
-							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 48, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 49, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 50, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 51, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 52, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 53, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 54, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 55, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 56, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 57, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 16,
-						"LinhaIDFK": 3,
-						"ItinerarioIDFK": 4,
-						"Descricao": "Ponto P",
-						"Horarios": [
-							{ "HorariosID": 45, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 46, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 47, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 48, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 49, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 50, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 51, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 52, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 53, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 54, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 55, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 56, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 57, "LinhaIDFK": 3, "ItinerarioIDFK": 4, "Hora": "13:10", "Periodo": 1 }
-						]
-					}
-				]
+				"LinhaIDFK": 2,
+				"Descricao": "volta",
+				"Estacoes": []
 			}
-		],
-		"Favorita": 0
+		]
 	},
 	{
-		"LinhaID": 4,
+		"LinhaID": 3,
 		"Numero": 4,
-		"Descricao": "RENOVAÇÃO x URBIS III",
-		"Itinerarios": [
-			{
-				"ItinerarioID": 5,
-				"LinhaIDFk": 4,
-				"Descricao": "RENOVAÇÃO x URBIS III",
-				"Estacoes": [
-					{   "EstacaoID": 17,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 5,
-						"Descricao": "Ponto H",
-						"Horarios": [
-							{ "HorariosID": 58, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 59, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 60, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 61, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 62, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 63, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 64, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 65, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 66, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 67, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 68, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 69, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 70, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 18,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 5,
-						"Descricao": "Ponto I",
-						"Horarios": [
-							{ "HorariosID": 71, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 72, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 73, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 74, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 75, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 76, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 77, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 78, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 79, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 80, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 81, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 82, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 83, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 1 }
-						] },
-					{   "EstacaoID": 19,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 5,
-						"Descricao": "Ponto J",
-						"Horarios": [
-							{ "HorariosID": 84, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 85, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 86, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 87, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 88, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 89, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 90, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 91, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 91, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 92, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 93, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 94, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 95, "LinhaIDFK": 3, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 20,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 5,
-						"Descricao": "Ponto L",
-						"Horarios": [
-							{ "HorariosID": 96, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 0 },
-							{ "HorariosID": 97, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 0 },
-							{ "HorariosID": 98, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 0 },
-							{ "HorariosID": 99, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 0 },
-							{ "HorariosID": 100, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 0 },
-							{ "HorariosID": 101, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "15:30", "Periodo": 0 },
-							{ "HorariosID": 102, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "17:15", "Periodo": 0 },
-							{ "HorariosID": 103, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "18:55", "Periodo": 0 },
-
-							{ "HorariosID": 40, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "07:10", "Periodo": 1 },
-							{ "HorariosID": 41, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "08:50", "Periodo": 1 },
-							{ "HorariosID": 42, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "10:35", "Periodo": 1 },
-							{ "HorariosID": 43, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "12:15", "Periodo": 1 },
-							{ "HorariosID": 44, "LinhaIDFK": 4, "ItinerarioIDFK": 5, "Hora": "13:55", "Periodo": 1 }
-						]
-					}
-				]
-			},
-			{
-				"ItinerarioID": 6,
-				"LinhaIDFk": 4,
-				"Descricao": "URBIS III X RENOVAÇÃO",
-				"Estacoes": [
-					{   "EstacaoID": 21,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 6,
-						"Descricao": "Ponto M",
-						"Horarios": [
-							{ "HorariosID": 104, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 105, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 106, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 107, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 108, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 109, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 110, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 111, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 112, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 113, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 114, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 115, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 116, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 22,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 6,
-						"Descricao": "Ponto N",
-						"Horarios": [
-							{ "HorariosID": 117, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 118, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 119, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 120, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 121, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 122, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 123, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 124, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 125, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 126, "LinhaIDFK": 4, "ItinerarioIDFK": 4, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 127, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 128, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 129, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 23,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 6,
-						"Descricao": "Ponto O",
-						"Horarios": [
-							{ "HorariosID": 130, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 131, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 132, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 133, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 134, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 135, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 136, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 137, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 138, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 139, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 140, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 141, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 142, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 1 }
-						]
-					},
-					{   "EstacaoID": 24,
-						"LinhaIDFK": 4,
-						"ItinerarioIDFK": 6,
-						"Descricao": "Ponto P",
-						"Horarios": [
-							{ "HorariosID": 143, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 0 },
-							{ "HorariosID": 144, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 0 },
-							{ "HorariosID": 145, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 0 },
-							{ "HorariosID": 146, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 0 },
-							{ "HorariosID": 147, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 0 },
-							{ "HorariosID": 148, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "14:45", "Periodo": 0 },
-							{ "HorariosID": 149, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "16:25", "Periodo": 0 },
-							{ "HorariosID": 150, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "18:10", "Periodo": 0 },
-
-							{ "HorariosID": 151, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "06:10", "Periodo": 1 },
-							{ "HorariosID": 152, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "08:05", "Periodo": 1 },
-							{ "HorariosID": 153, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "09:45", "Periodo": 1 },
-							{ "HorariosID": 154, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "11:25", "Periodo": 1 },
-							{ "HorariosID": 155, "LinhaIDFK": 4, "ItinerarioIDFK": 6, "Hora": "13:10", "Periodo": 1 }
-						]
-					}
-				]
-			}
-		],
-		"Favorita": 0
+		"Descricao": "RENOVAÇÃO x URBIS III"
 	}
 ]
-

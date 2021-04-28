@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         loadPerfilUsuario();
 
-        //carregaJson();
-        downloadLinhas();
+        carregaJson();
+        //downloadLinhas();
         carregaLinhasFavoritas ();
 
         //loadRecycle ();
@@ -273,6 +273,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void run () {
                 configuracaoDatabase.linhaDAO().insertLinhaList(linhas);
+            }
+        });
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run () {
+                loadRecycle();
+                preferencias = new Preferencias();
+                preferencias.setDownloadLinhas(true);
+                sharedPreferences.atualizaPreferencias( preferencias );
             }
         });
     }
