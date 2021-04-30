@@ -1,6 +1,7 @@
 package com.gustavobrunoro.horabusao.Database.DAO;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -30,4 +31,8 @@ public interface LinhaDAO {
 
     @Update
     void updateLinha (Linha linha);
+
+    @Query("DELETE FROM Linha")
+    void delete();
+
 }

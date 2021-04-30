@@ -21,4 +21,7 @@ public interface LinhaFavoritaDAO {
 
     @Delete
     void removeLinhaFavorita (LinhaFavorita linhaFavorita);
+
+    @Query("DELETE FROM LinhaFavorita")
+    void delete();
 }

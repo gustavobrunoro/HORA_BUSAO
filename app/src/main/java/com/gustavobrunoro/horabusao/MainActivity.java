@@ -1,5 +1,6 @@
 package com.gustavobrunoro.horabusao;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,7 +9,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -38,6 +43,7 @@ import com.gustavobrunoro.horabusao.Activity.LinhaFavoritasFragment;
 import com.gustavobrunoro.horabusao.Activity.LinhaFragment;
 import com.gustavobrunoro.horabusao.Activity.Login.LoginActivity;
 import com.gustavobrunoro.horabusao.Activity.SobreActivity;
+import com.gustavobrunoro.horabusao.Adapter.AdapterEstacao;
 import com.gustavobrunoro.horabusao.Database.ConfiguracaoDatabase;
 import com.gustavobrunoro.horabusao.Database.HELP.AppExecutors;
 import com.gustavobrunoro.horabusao.Database.SharedPreferences;
@@ -64,6 +70,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+    private String[] permissoes = new String[]{
+            Manifest.permission.INTERNET,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_NETWORK_STATE
+    };
 
     private Toolbar toolbar;
     private DrawerLayout drawer;
@@ -161,6 +173,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        //Efetuar uma Varredura nas Permissões
+        for (int permissaoResultado : grantResults) {
+
+            // Verifica se a Permissão esta negada, para solicita permissão
+            if ( permissaoResultado == PackageManager.PERMISSION_DENIED){
+
+                // Solicita a permissão
+                alertaPermissao();
+            }
+
+        }
     }
 
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -264,6 +293,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void  carregaJson(){
+
         String json =  CommonUtils.loadJSONFromAsset(getApplicationContext(), DATA_JSON_PATH);
         List<Linha> jsonModelList1 = new ArrayList<>();
         jsonModelList1 = new Gson().fromJson(json, new TypeToken<List<Linha>>(){}.getType());
@@ -272,6 +302,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run () {
+                //configuracaoDatabase.linhaDAO().delete();
+                //configuracaoDatabase.linhaFavoritaDAO().delete();
                 configuracaoDatabase.linhaDAO().insertLinhaList(linhas);
             }
         });
@@ -352,5 +384,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nomeUsuario.setText( usuario == null ? "Nome Usuario" : usuario.getNome() );
 
     }
+
+    private void alertaPermissao(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Permissões Necessárias");
+        builder.setMessage("Para Ultilizar este aplicativo é necessário aceitar as permissões");
+        builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {finish();}
+        });
+
+        builder.setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 
 }

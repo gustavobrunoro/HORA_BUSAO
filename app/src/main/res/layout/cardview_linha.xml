@@ -31,6 +31,7 @@
             android:layout_height="match_parent" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_Descricao"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +57,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tv_ProximoID"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:gravity="center"
@@ -73,7 +74,7 @@
                 android:layout_width="60dp"
                 android:padding="10dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/img_onibus"
+                android:src="@drawable/ic_localizacao_onibus"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

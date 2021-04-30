@@ -357,7 +357,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
         List<Horarios> horariosList = new ArrayList<>();
         LocalOnibus localOnibus;
         int controle = 0;
-        int estacao;
+
 
         for (int e = 0; e  < linha.getItinerarios().get( itinerario ).getEstacoes().size() ; e ++) {
 
@@ -379,7 +379,7 @@ public class AdapterEstacao extends RecyclerView.Adapter<AdapterEstacao.ViewHold
             controle = i + 1 == localOnibusList.size() ? 0 :  i + 1 ;
 
             if  ( verificaHorario( localOnibusList.get( i ).getHora(), localOnibusList.get( controle ).getHora() ) ){
-                proximaParada = estacao = linha.getItinerarios().get( itinerario ).getEstacoes().get( localOnibusList.get( controle ).getEstacaoID() ).getEstacaoID();
+                proximaParada = linha.getItinerarios().get( itinerario ).getEstacoes().get( localOnibusList.get( controle ).getEstacaoID() ).getEstacaoID();
             }
         }
 

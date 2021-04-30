@@ -90,10 +90,10 @@ public class LinhaFragment extends Fragment {
             }
         });
 
-        recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+       /* recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick (View view, int position) {
-                startActivity(new Intent(getContext(), EstacaoActivity.class).putExtra("Linha",linhas.get(position)));
+               startActivity(new Intent(getContext(), EstacaoActivity.class).putExtra("Linha",linhas.get(position)));
             }
 
             @Override
@@ -103,7 +103,7 @@ public class LinhaFragment extends Fragment {
             @Override
             public void onItemClick (AdapterView<?> adapterView, View view, int i, long l) {
             }
-        }));
+        }));*/
 
         return view;
     }

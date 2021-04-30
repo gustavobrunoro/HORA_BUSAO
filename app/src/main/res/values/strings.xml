@@ -36,5 +36,6 @@
 
     <string name="facebook_app_id">760456967942941</string>
     <string name="fb_login_protocol_scheme">fb760456967942941</string>
+    <string name="title_activity_localizacao">Map</string>
 
 </resources>

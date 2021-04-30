@@ -45,14 +45,14 @@ public class SobreActivity extends AppCompatActivity {
         });
 
         View sobre = new AboutPage(this).isRTL(false)
-                .setImage( R.drawable.img_logo )
+                .setImage( R.drawable.img_onibus )
                 .setDescription( descricao )
                 .addGroup( "Fale Conosco" )
-                .addEmail( getResources().getString(R.string.sobre_email) )
-                .addWebsite( getResources().getString(R.string.sobre_website) )
-                .addFacebook( getResources().getString(R.string.sobre_facebook)  )
-                .addInstagram( getResources().getString(R.string.sobre_instagram)  )
-                .addItem( phoneElement )
+                //.addEmail( getResources().getString(R.string.sobre_email) )
+                //.addWebsite( getResources().getString(R.string.sobre_website) )
+                //.addFacebook( getResources().getString(R.string.sobre_facebook)  )
+                //.addInstagram( getResources().getString(R.string.sobre_instagram)  )
+                //.addItem( phoneElement )
                 .addItem( versionElement )
                 .create();
         setContentView(sobre);

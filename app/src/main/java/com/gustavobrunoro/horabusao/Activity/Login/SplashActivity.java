@@ -43,13 +43,13 @@ public class SplashActivity extends AppCompatActivity implements Runnable {
         i = 1;
 
         try{
-            while(i<=100){
-                Thread.sleep(50);
+            while(i<=50){
+                Thread.sleep(25);
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         i++;
-                        progressBar.setProgress(i);
+                        progressBar.setProgress(i*2);
                     }
                 });
             }
@@ -63,7 +63,8 @@ public class SplashActivity extends AppCompatActivity implements Runnable {
                 startActivity(new Intent(getBaseContext(), MainActivity.class));
             }else{
                 finish();
-                startActivity(new Intent(getBaseContext(), LoginActivity.class));
+                //startActivity(new Intent(getBaseContext(), LoginActivity.class));
+                startActivity(new Intent(getBaseContext(), MainActivity.class));
             }
         }
         catch (InterruptedException e){
