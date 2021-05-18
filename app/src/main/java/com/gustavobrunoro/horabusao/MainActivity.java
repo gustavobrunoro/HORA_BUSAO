@@ -35,8 +35,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+
 import com.gustavobrunoro.horabusao.API.RetrofitConfig;
 import com.gustavobrunoro.horabusao.API.Rotas;
 import com.gustavobrunoro.horabusao.Activity.LinhaFavoritasFragment;
